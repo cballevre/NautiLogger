@@ -12,6 +12,7 @@
   "dependencies": {
     "@refinedev/cli": "^2.16.46",
     "@refinedev/core": "^4.57.9",
+    "@refinedev/react-router": "^1.0.1",
     "@refinedev/supabase": "^5.9.8",
     "@supabase/supabase-js": "^2.50.3",
     "@tanstack/react-query": "^4.10.1",
