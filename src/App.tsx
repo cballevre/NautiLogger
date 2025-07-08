@@ -11,7 +11,7 @@ import { BrowserRouter } from "react-router";
 import { supabaseClient } from "./utils/supabaseClient";
 import { authProvider } from "./providers/auth-provider.ts";
 import { ListBoat } from "./pages/boats/list.tsx";
-
+import { Layout } from "./components/layout.tsx";
 
 function App() {
 
@@ -30,7 +30,9 @@ function App() {
                     // We're omitting the `fallback` prop to redirect users to the login page if they are not authenticated.
                     // If the user is authenticated, we'll render the `<Header />` component and the `<Outlet />` component to render the inner routes.
                     <Authenticated key="authenticated-routes" redirectOnFail="/login">
-                      <Outlet />
+                      <Layout>
+                        <Outlet />
+                      </Layout>
                     </Authenticated>
                   }
                 >
