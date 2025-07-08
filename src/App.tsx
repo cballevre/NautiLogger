@@ -7,6 +7,7 @@ import { Routes, Outlet, Route } from "react-router";
 import { ConfigProvider, App as AntdApp } from "antd";
 import { AuthPage } from "@refinedev/antd";
 import { BrowserRouter } from "react-router";
+import { useTranslation } from "react-i18next";
 
 import { supabaseClient } from "./utils/supabaseClient";
 import { authProvider } from "./providers/auth-provider.ts";
@@ -15,6 +16,14 @@ import { Layout } from "./components/layout.tsx";
 
 function App() {
 
+  const { t, i18n } = useTranslation();
+
+  const i18nProvider = {
+    translate: (key: string, params: object) => t(key, params),
+    changeLocale: (lang: string) => i18n.changeLanguage(lang),
+    getLocale: () => i18n.language,
+  };
+
   return (
     <BrowserRouter>
       <ConfigProvider>
@@ -22,7 +31,8 @@ function App() {
           <Refine
             dataProvider={dataProvider(supabaseClient)}
             authProvider={authProvider}
-            routerProvider={routerProvider}>
+            routerProvider={routerProvider}
+            i18nProvider={i18nProvider}>
               <Routes>
                 <Route
                   element={
