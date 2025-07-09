@@ -1,19 +1,20 @@
-import { useList, Link } from '@refinedev/core';
+import { Link, useList, useTranslation } from '@refinedev/core';
 
 const ListBoat = () => {
   const { data: boats } = useList({
     resource: 'boats',
   });
 
+  const { translate } = useTranslation();
+
   return (
     <div>
-      <h1>Boat List</h1>
-      <p> Showing {boats?.total} records in total. </p>
-      <Link to="/boats/add">Create a new boat</Link>
+      <h1>{translate('ListBoat.title')}</h1>
+      <Link to="/boats/add">{translate('ListBoat.add')}</Link>
       <ul>
         {boats?.data?.map((boat) => (
           <li key={boat.id}>
-            <a href={`/boats/${boat.id}`}>{boat.name}</a>
+            <Link to={`/boats/${boat.id}`}>{boat.name}</Link>
           </li>
         ))}
       </ul>

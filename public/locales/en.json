@@ -1,5 +1,15 @@
 {
   "LogoutButton": {
     "label": "Logout"
+  },
+  "ListBoat": {
+    "title": "Your boats",
+    "add": "Create a new boat"
+  },
+  "AddBoat": {
+    "title": "Add a new boat",
+    "labels": {
+      "name": "Name"
+    }
   }
 }
