@@ -1,6 +1,6 @@
-import type { AuthProvider } from "@refinedev/core";
+import type { AuthProvider } from '@refinedev/core';
 
-import { supabaseClient } from "../utils/supabaseClient";
+import { supabaseClient } from '../utils/supabaseClient';
 
 const authProvider: AuthProvider = {
   login: async ({ email, password, providerName }) => {
@@ -53,8 +53,8 @@ const authProvider: AuthProvider = {
     return {
       success: false,
       error: {
-        message: "Login failed",
-        name: "Invalid email or password",
+        message: 'Login failed',
+        name: 'Invalid email or password',
       },
     };
   },
@@ -87,8 +87,8 @@ const authProvider: AuthProvider = {
     return {
       success: false,
       error: {
-        message: "Register failed",
-        name: "Invalid email or password",
+        message: 'Register failed',
+        name: 'Invalid email or password',
       },
     };
   },
@@ -130,8 +130,8 @@ const authProvider: AuthProvider = {
     return {
       success: false,
       error: {
-        message: "Forgot password failed",
-        name: "Invalid email",
+        message: 'Forgot password failed',
+        name: 'Invalid email',
       },
     };
   },
@@ -151,7 +151,7 @@ const authProvider: AuthProvider = {
       if (data) {
         return {
           success: true,
-          redirectTo: "/",
+          redirectTo: '/',
         };
       }
     } catch (error: any) {
@@ -163,8 +163,8 @@ const authProvider: AuthProvider = {
     return {
       success: false,
       error: {
-        message: "Update password failed",
-        name: "Invalid password",
+        message: 'Update password failed',
+        name: 'Invalid password',
       },
     };
   },
@@ -180,7 +180,7 @@ const authProvider: AuthProvider = {
 
     return {
       success: true,
-      redirectTo: "/",
+      redirectTo: '/',
     };
   },
   onError: async (error) => {
@@ -196,22 +196,22 @@ const authProvider: AuthProvider = {
         return {
           authenticated: false,
           error: {
-            message: "Check failed",
-            name: "Session not found",
+            message: 'Check failed',
+            name: 'Session not found',
           },
           logout: true,
-          redirectTo: "/login",
+          redirectTo: '/login',
         };
       }
     } catch (error: any) {
       return {
         authenticated: false,
         error: error || {
-          message: "Check failed",
-          name: "Session not found",
+          message: 'Check failed',
+          name: 'Session not found',
         },
         logout: true,
-        redirectTo: "/login",
+        redirectTo: '/login',
       };
     }
 
