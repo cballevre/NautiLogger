@@ -5,7 +5,7 @@ import { ConfigProvider, App as AntdApp } from 'antd';
 import { BrowserRouter } from 'react-router';
 import { useTranslation } from 'react-i18next';
 
-import { supabaseClient } from './utils/supabaseClient';
+import { supabaseClient } from './utils/supabaseClient.ts';
 import { authProvider } from './providers/auth-provider.ts';
 import { AppRouter } from './app-router.tsx';
 
