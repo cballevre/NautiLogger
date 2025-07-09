@@ -30,7 +30,7 @@ const AppRouter = () => {
           }>
             <Route index element={<ListBoat />} />
         </Route>
-        <Route path="/boats" element={
+        <Route path="/boats/:id" element={
             <Layout menuItems={boatMenuItems}>
                 <Outlet />
             </Layout>
