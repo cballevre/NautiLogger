@@ -6,39 +6,30 @@ import { AuthPage } from '@refinedev/antd';
 import { ListBoat } from './pages/boats/list.tsx';
 import { Layout } from './components/layout.tsx';
 import { ShowBoat } from './pages/boats/show.tsx';
-import { mainMenuItems, boatMenuItems } from './components/menu.ts';
 import { AddBoat } from './pages/boats/add.tsx';
+import { BoatMenu } from './components/boat-menu.tsx';
 
 const AppRouter = () => {
   return (
     <Routes>
       <Route
         element={
-          // We're wrapping our routes with the `<Authenticated />` component
-          // We're omitting the `fallback` prop to redirect users to the login page if they are not authenticated.
-          // If the user is authenticated, we'll render the `<Header />` component and the `<Outlet />` component to render the inner routes.
           <Authenticated key="authenticated-routes" redirectOnFail="/login">
-            <Outlet />
+            <Layout>
+              <Outlet />
+            </Layout>
           </Authenticated>
         }
       >
-        <Route
-          path="/"
-          element={
-            <Layout menuItems={mainMenuItems}>
-              <Outlet />
-            </Layout>
-          }
-        >
-          <Route index element={<ListBoat />} />
-          <Route path="/boats/add" element={<AddBoat />} />
-        </Route>
+        <Route index element={<ListBoat />} />
+        <Route path="/boats/add" element={<AddBoat />} />
         <Route
           path="/boats/:id"
           element={
-            <Layout menuItems={boatMenuItems}>
+            <>
+              <BoatMenu />
               <Outlet />
-            </Layout>
+            </>
           }
         >
           <Route index element={<ShowBoat />} />
