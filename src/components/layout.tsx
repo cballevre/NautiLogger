@@ -10,10 +10,9 @@ const { Header, Content, Footer } = LayoutAntd;
 export type MenuItem = Required<MenuProps>['items'][number];
 interface LayoutProps {
   children: React.ReactNode;
-  menuItems?: MenuItem[];
 }
 
-const Layout: FC<LayoutProps> = ({ children, menuItems }) => {
+const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <LayoutAntd style={{ minHeight: '100vh' }}>
       <Header style={{ display: 'flex', alignItems: 'center' }}>
@@ -27,7 +26,7 @@ const Layout: FC<LayoutProps> = ({ children, menuItems }) => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['2']}
-          items={menuItems}
+          items={[]}
           style={{ flex: 1, minWidth: 0 }}
         />
         <LogoutButton style={{ marginLeft: 'auto', color: 'white' }} />
