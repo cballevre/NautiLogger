@@ -5,6 +5,8 @@ import { AuthPage } from "@refinedev/antd";
 
 import { ListBoat } from "./pages/boats/list.tsx";
 import { Layout } from "./components/layout.tsx";
+import { ShowBoat } from "./pages/boats/show.tsx";
+import { mainMenuItems, boatMenuItems } from "./components/menu.ts";
 
 const AppRouter = () => {
   return (
@@ -15,13 +17,26 @@ const AppRouter = () => {
           // We're omitting the `fallback` prop to redirect users to the login page if they are not authenticated.
           // If the user is authenticated, we'll render the `<Header />` component and the `<Outlet />` component to render the inner routes.
           <Authenticated key="authenticated-routes" redirectOnFail="/login">
-            <Layout>
-              <Outlet />
-            </Layout>
+            <Outlet />
           </Authenticated>
         }
       >
-        <Route index element={<ListBoat />} />
+        <Route
+          path="/"
+          element={
+            <Layout menuItems={mainMenuItems}>
+              <Outlet />
+            </Layout>
+          }>
+            <Route index element={<ListBoat />} />
+        </Route>
+        <Route path="/boats" element={
+            <Layout menuItems={boatMenuItems}>
+                <Outlet />
+            </Layout>
+            }>
+            <Route index element={<ShowBoat />} />
+        </Route>
       </Route>
       <Route
         element={
