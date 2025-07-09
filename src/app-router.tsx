@@ -7,6 +7,7 @@ import { ListBoat } from "./pages/boats/list.tsx";
 import { Layout } from "./components/layout.tsx";
 import { ShowBoat } from "./pages/boats/show.tsx";
 import { mainMenuItems, boatMenuItems } from "./components/menu.ts";
+import { AddBoat } from "./pages/boats/add.tsx";
 
 const AppRouter = () => {
   return (
@@ -29,6 +30,7 @@ const AppRouter = () => {
             </Layout>
           }>
             <Route index element={<ListBoat />} />
+            <Route path="/boats/add" element={<AddBoat />} />
         </Route>
         <Route path="/boats/:id" element={
             <Layout menuItems={boatMenuItems}>
