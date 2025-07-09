@@ -3,6 +3,7 @@ import { Breadcrumb, Layout as LayoutAntd, Menu, theme } from "antd";
 import type { MenuProps } from 'antd';
 
 import { LogoutButton } from "./logout-button";
+import { Link } from "@refinedev/core";
 
 const { Header, Content, Footer } = LayoutAntd;
 
@@ -20,9 +21,9 @@ const Layout: FC<LayoutProps> = ({ children, menuItems }) => {
   return (
     <LayoutAntd>
       <Header style={{ display: "flex", alignItems: "center" }}>
-        <div style={{ color: "white", fontSize: "24px", marginRight: "20px" }}>
+        <Link to="/" style={{ color: "white", fontSize: "24px", marginRight: "20px" }}>
           Nauti Logger
-        </div>
+        </Link>
         <Menu
           theme="dark"
           mode="horizontal"
