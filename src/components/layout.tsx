@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from "react";
+import type { FC } from "react";
 import { Breadcrumb, Layout as LayoutAntd, Menu, theme } from "antd";
 import type { MenuProps } from 'antd';
 
@@ -6,16 +6,13 @@ import { LogoutButton } from "./logout-button";
 
 const { Header, Content, Footer } = LayoutAntd;
 
-type MenuItem = Required<MenuProps>['items'][number];
+export type MenuItem = Required<MenuProps>['items'][number];
+interface LayoutProps {
+  children: React.ReactNode;
+  menuItems?: MenuItem[];
+}
 
-const items: MenuItem[] = [
-  {
-    label: 'Navigation One',
-    key: 'mail',
-  }
-]
-
-const Layout: FC<PropsWithChildren> = ({ children }) => {
+const Layout: FC<LayoutProps> = ({ children, menuItems }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -30,7 +27,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["2"]}
-          items={items}
+          items={menuItems}
           style={{ flex: 1, minWidth: 0 }}
         />
         <LogoutButton style={{ marginLeft: "auto", color: "white" }} />
