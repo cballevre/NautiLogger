@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Breadcrumb, Layout as LayoutAntd, Menu, theme } from 'antd';
+import { Layout as LayoutAntd, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 
 import { LogoutButton } from './logout-button';
@@ -14,12 +14,8 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, menuItems }) => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
   return (
-    <LayoutAntd>
+    <LayoutAntd style={{ minHeight: '100vh' }}>
       <Header style={{ display: 'flex', alignItems: 'center' }}>
         <Link
           to="/"
@@ -36,22 +32,7 @@ const Layout: FC<LayoutProps> = ({ children, menuItems }) => {
         />
         <LogoutButton style={{ marginLeft: 'auto', color: 'white' }} />
       </Header>
-      <Content style={{ padding: '0 48px' }}>
-        <Breadcrumb
-          style={{ margin: '16px 0' }}
-          items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}
-        />
-        <div
-          style={{
-            background: colorBgContainer,
-            minHeight: 280,
-            padding: 24,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          {children}
-        </div>
-      </Content>
+      <Content style={{ padding: '0 48px' }}>{children}</Content>
       <Footer style={{ textAlign: 'center' }}>
         &copy; {new Date().getFullYear()} Nauti Logger created by
         <a style={{ marginLeft: 4 }} href="https://cballevre.net">
