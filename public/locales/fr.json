@@ -1,5 +1,15 @@
 {
   "LogoutButton": {
     "label": "Déconnexion"
+  },
+  "ListBoat": {
+    "title": "Vos bateaux",
+    "add": "Ajouter un nouveau bateau"
+  },
+  "AddBoat": {
+    "title": "Ajouter un nouveau bateau",
+    "labels": {
+      "name": "Nom"
+    }
   }
 }
