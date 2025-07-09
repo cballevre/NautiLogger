@@ -1,18 +1,13 @@
-import { Refine, Authenticated } from "@refinedev/core";
+import { Refine } from "@refinedev/core";
 import { dataProvider } from "@refinedev/supabase";
-import routerProvider, {
-  NavigateToResource
-} from "@refinedev/react-router";
-import { Routes, Outlet, Route } from "react-router";
+import routerProvider from "@refinedev/react-router";
 import { ConfigProvider, App as AntdApp } from "antd";
-import { AuthPage } from "@refinedev/antd";
 import { BrowserRouter } from "react-router";
 import { useTranslation } from "react-i18next";
 
 import { supabaseClient } from "./utils/supabaseClient";
 import { authProvider } from "./providers/auth-provider.ts";
-import { ListBoat } from "./pages/boats/list.tsx";
-import { Layout } from "./components/layout.tsx";
+import { AppRouter } from "./app-router.tsx";
 
 function App() {
 
@@ -33,40 +28,7 @@ function App() {
             authProvider={authProvider}
             routerProvider={routerProvider}
             i18nProvider={i18nProvider}>
-              <Routes>
-                <Route
-                  element={
-                    // We're wrapping our routes with the `<Authenticated />` component
-                    // We're omitting the `fallback` prop to redirect users to the login page if they are not authenticated.
-                    // If the user is authenticated, we'll render the `<Header />` component and the `<Outlet />` component to render the inner routes.
-                    <Authenticated key="authenticated-routes" redirectOnFail="/login">
-                      <Layout>
-                        <Outlet />
-                      </Layout>
-                    </Authenticated>
-                  }
-                >
-                  <Route index element={<ListBoat />} />
-                </Route>
-                <Route
-                  element={
-                    <Authenticated key="auth-pages" fallback={<Outlet />}>
-                      <NavigateToResource />
-                    </Authenticated>
-                  }
-                >
-                  <Route path="/login" element={<AuthPage />} />
-                  <Route path="/register" element={<AuthPage type="register" />} />
-                  <Route
-                    path="/forgot-password"
-                    element={<AuthPage type="forgotPassword" />}
-                  />
-                  <Route
-                    path="/update-password"
-                    element={<AuthPage type="updatePassword" />}
-                  />
-                </Route>
-              </Routes>
+              <AppRouter />
           </Refine>
         </AntdApp>
       </ConfigProvider>
