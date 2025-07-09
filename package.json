@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "5.x",
     "@refinedev/antd": "^5.46.1",
     "@refinedev/cli": "^2.16.46",
     "@refinedev/core": "^4.57.9",
