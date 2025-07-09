@@ -1,13 +1,12 @@
+import { AuthPage } from '@refinedev/antd';
 import { Authenticated } from '@refinedev/core';
 import { NavigateToResource } from '@refinedev/react-router';
-import { Routes, Outlet, Route } from 'react-router';
-import { AuthPage } from '@refinedev/antd';
-
-import { ListBoat } from './pages/boats/list.tsx';
-import { Layout } from './components/layout.tsx';
-import { ShowBoat } from './pages/boats/show.tsx';
-import { AddBoat } from './pages/boats/add.tsx';
+import { Navigate, Outlet, Route, Routes } from 'react-router';
 import { BoatMenu } from './components/boat-menu.tsx';
+import { Layout } from './components/layout.tsx';
+import { AddBoat } from './pages/boats/add.tsx';
+import { BoatDashboard } from './pages/boats/dashboard.tsx';
+import { ListBoat } from './pages/boats/list.tsx';
 
 const AppRouter = () => {
   return (
@@ -32,7 +31,8 @@ const AppRouter = () => {
             </>
           }
         >
-          <Route index element={<ShowBoat />} />
+          <Route index element={<Navigate to="dashboard" />} />
+          <Route path="dashboard" element={<BoatDashboard />} />
         </Route>
       </Route>
       <Route
