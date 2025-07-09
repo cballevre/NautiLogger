@@ -1,9 +1,9 @@
-import { useOne } from "@refinedev/core";
-import { useParams } from "react-router";
+import { useOne } from '@refinedev/core';
+import { useParams } from 'react-router';
 
 const ShowBoat = () => {
   const { id } = useParams();
-  const { data, isLoading } = useOne({ resource: "boats", id });
+  const { data, isLoading } = useOne({ resource: 'boats', id });
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -12,4 +12,4 @@ const ShowBoat = () => {
   return <div>Boat name: {data?.data.name}</div>;
 };
 
-export { ShowBoat }
+export { ShowBoat };

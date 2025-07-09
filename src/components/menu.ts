@@ -1,13 +1,12 @@
-import type { MenuItem } from "./layout"
+import type { MenuItem } from './layout';
 
 const mainMenuItems: MenuItem[] = [
   {
     label: 'Boats',
     key: 'boats',
-  }
-]
+  },
+];
 
-const boatMenuItems: MenuItem[] = [
-]
+const boatMenuItems: MenuItem[] = [];
 
 export { mainMenuItems, boatMenuItems };
