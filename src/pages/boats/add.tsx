@@ -20,16 +20,16 @@ const AddBoat = () => {
   const { translate } = useTranslation();
 
   return (
-    <div>
-      <h1>{translate('AddBoat.title')}</h1>
-      <Create saveButtonProps={saveButtonProps}>
-        <Form {...formProps} onFinish={handleOnFinish} layout="vertical">
-          <Form.Item label={translate('AddBoat.labels.name')} name="name">
-            <Input />
-          </Form.Item>
-        </Form>
-      </Create>
-    </div>
+    <Create
+      saveButtonProps={saveButtonProps}
+      title={translate('AddBoat.title')}
+    >
+      <Form {...formProps} onFinish={handleOnFinish} layout="vertical">
+        <Form.Item label={translate('AddBoat.labels.name')} name="name">
+          <Input />
+        </Form.Item>
+      </Form>
+    </Create>
   );
 };
 
