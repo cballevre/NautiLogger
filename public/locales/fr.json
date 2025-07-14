@@ -11,5 +11,8 @@
     "labels": {
       "name": "Nom"
     }
+  },
+  "InterventionList": {
+    "title": "Liste des interventions"
   }
 }
