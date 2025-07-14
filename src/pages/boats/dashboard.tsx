@@ -1,9 +1,7 @@
-import { useOne } from '@refinedev/core';
-import { useParams } from 'react-router';
+import { useCurrentBoat } from '../../hooks/use-current-boat';
 
 const BoatDashboard = () => {
-  const { id } = useParams();
-  const { data, isLoading } = useOne({ resource: 'boats', id });
+  const { data, isLoading } = useCurrentBoat();
 
   if (isLoading) {
     return <div>Loading...</div>;

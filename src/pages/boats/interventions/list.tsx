@@ -1,12 +1,12 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
 import { List, Typography } from 'antd';
+import { useCurrentBoat } from '../../../hooks/use-current-boat';
 
 const InterventionList = () => {
+  const { data: boat } = useCurrentBoat();
   const { data: interventions } = useList({
     resource: 'interventions',
   });
-
-  console.log(interventions);
 
   const { translate } = useTranslation();
 
@@ -15,6 +15,9 @@ const InterventionList = () => {
       <Typography.Title level={2}>
         {translate('InterventionList.title')}
       </Typography.Title>
+      <Link to={`/boats/${boat?.data.id}/interventions/add`}>
+        {translate('InterventionList.add')}
+      </Link>
       <div
         style={{ padding: '0px 16px', background: '#fff', borderRadius: '8px' }}
       >
@@ -26,7 +29,7 @@ const InterventionList = () => {
               <List.Item.Meta
                 title={
                   <Link
-                    to={`/boats/${intervention.boat_id}/interventions/${intervention.id}`}
+                    to={`/boats/${boat?.data.id}/interventions/${intervention.id}`}
                   >
                     {intervention.title}
                   </Link>
