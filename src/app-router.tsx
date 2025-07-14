@@ -6,6 +6,7 @@ import { BoatMenu } from './components/boat-menu.tsx';
 import { Layout } from './components/layout.tsx';
 import { AddBoat } from './pages/boats/add.tsx';
 import { BoatDashboard } from './pages/boats/dashboard.tsx';
+import { InterventionList } from './pages/boats/interventions/list.tsx';
 import { ListBoat } from './pages/boats/list.tsx';
 
 const AppRouter = () => {
@@ -33,6 +34,9 @@ const AppRouter = () => {
         >
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<BoatDashboard />} />
+          <Route path="interventions">
+            <Route index element={<InterventionList />} />
+          </Route>
         </Route>
       </Route>
       <Route
