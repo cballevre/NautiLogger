@@ -13,6 +13,15 @@
     }
   },
   "InterventionList": {
-    "title": "Intervention List"
+    "title": "Intervention List",
+    "add": "Add an intervention"
+  },
+  "AddIntervention": {
+    "title": "Add an intervention",
+    "labels": {
+      "title": "Title",
+      "date": "Date",
+      "description": "Description"
+    }
   }
 }

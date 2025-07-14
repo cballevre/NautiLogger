@@ -6,6 +6,7 @@ import { BoatMenu } from './components/boat-menu.tsx';
 import { Layout } from './components/layout.tsx';
 import { AddBoat } from './pages/boats/add.tsx';
 import { BoatDashboard } from './pages/boats/dashboard.tsx';
+import { AddIntervention } from './pages/boats/interventions/add.tsx';
 import { InterventionList } from './pages/boats/interventions/list.tsx';
 import { ListBoat } from './pages/boats/list.tsx';
 
@@ -24,7 +25,7 @@ const AppRouter = () => {
         <Route index element={<ListBoat />} />
         <Route path="/boats/add" element={<AddBoat />} />
         <Route
-          path="/boats/:id"
+          path="/boats/:boatId"
           element={
             <>
               <BoatMenu />
@@ -36,6 +37,7 @@ const AppRouter = () => {
           <Route path="dashboard" element={<BoatDashboard />} />
           <Route path="interventions">
             <Route index element={<InterventionList />} />
+            <Route path="add" element={<AddIntervention />} />
           </Route>
         </Route>
       </Route>
