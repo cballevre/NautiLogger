@@ -1,7 +1,7 @@
 import { Create, useForm } from '@refinedev/antd';
 import { useTranslation } from '@refinedev/core';
-import { DatePicker, Form, Input } from 'antd';
 
+import { InterventionForm } from '@/components/intervention-form';
 import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 interface InterventionFormValues {
@@ -30,26 +30,10 @@ const AddIntervention = () => {
         saveButtonProps={saveButtonProps}
         title={translate('AddIntervention.title')}
       >
-        <Form {...formProps} onFinish={handleOnFinish} layout="vertical">
-          <Form.Item
-            label={translate('AddIntervention.labels.title')}
-            name="title"
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            label={translate('AddIntervention.labels.description')}
-            name="description"
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            label={translate('AddIntervention.labels.date')}
-            name="date"
-          >
-            <DatePicker />
-          </Form.Item>
-        </Form>
+        <InterventionForm
+          formProps={formProps}
+          handleOnFinish={handleOnFinish}
+        />
       </Create>
     </div>
   );
