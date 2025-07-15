@@ -23,5 +23,8 @@
       "date": "Date",
       "description": "Description"
     }
+  },
+  "InterventionShow": {
+    "edit": "Modifier l'intervention"
   }
 }
