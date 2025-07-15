@@ -1,4 +1,4 @@
-import { useCurrentBoat } from '../../hooks/use-current-boat';
+import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const BoatDashboard = () => {
   const { data, isLoading } = useCurrentBoat();

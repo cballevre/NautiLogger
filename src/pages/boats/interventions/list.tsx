@@ -1,6 +1,7 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
 import { List, Typography } from 'antd';
-import { useCurrentBoat } from '../../../hooks/use-current-boat';
+
+import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const InterventionList = () => {
   const { data: boat } = useCurrentBoat();

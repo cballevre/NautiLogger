@@ -1,7 +1,8 @@
 import { Link, useOne, useTranslation } from '@refinedev/core';
 import { Typography } from 'antd';
 import { useParams } from 'react-router';
-import { useCurrentBoat } from '../../../hooks/use-current-boat';
+
+import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const ShowIntervention = () => {
   const { data: boat } = useCurrentBoat();

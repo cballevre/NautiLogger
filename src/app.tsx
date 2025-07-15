@@ -1,13 +1,13 @@
 import { Refine } from '@refinedev/core';
-import { dataProvider } from '@refinedev/supabase';
 import routerProvider from '@refinedev/react-router';
-import { ConfigProvider, App as AntdApp } from 'antd';
-import { BrowserRouter } from 'react-router';
+import { dataProvider } from '@refinedev/supabase';
+import { App as AntdApp, ConfigProvider } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { BrowserRouter } from 'react-router';
 
-import { supabaseClient } from './utils/supabaseClient.ts';
-import { authProvider } from './providers/auth-provider.ts';
-import { AppRouter } from './app-router.tsx';
+import { AppRouter } from '@/app-router.tsx';
+import { authProvider } from '@/providers/auth-provider.ts';
+import { supabaseClient } from '@/utils/supabaseClient.ts';
 
 function App() {
   const { t, i18n } = useTranslation();

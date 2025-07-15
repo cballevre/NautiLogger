@@ -1,9 +1,9 @@
-import type { FC } from 'react';
-import { Layout as LayoutAntd, Menu } from 'antd';
+import { Link } from '@refinedev/core';
 import type { MenuProps } from 'antd';
+import { Layout as LayoutAntd, Menu } from 'antd';
+import type { FC } from 'react';
 
 import { LogoutButton } from './logout-button';
-import { Link } from '@refinedev/core';
 
 const { Header, Content, Footer } = LayoutAntd;
 

@@ -1,7 +1,8 @@
 import { Create, useForm } from '@refinedev/antd';
 import { useTranslation } from '@refinedev/core';
 import { DatePicker, Form, Input } from 'antd';
-import { useCurrentBoat } from '../../../hooks/use-current-boat';
+
+import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 interface InterventionFormValues {
   [key: string]: any;
