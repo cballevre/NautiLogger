@@ -6,7 +6,7 @@ const BoatDashboard = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  console.log(data);
+
   return <div>Boat name: {data?.data.name}</div>;
 };
 
