@@ -2,14 +2,15 @@ import { AuthPage } from '@refinedev/antd';
 import { Authenticated } from '@refinedev/core';
 import { NavigateToResource } from '@refinedev/react-router';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
-import { BoatMenu } from './components/boat-menu.tsx';
-import { Layout } from './components/layout.tsx';
-import { AddBoat } from './pages/boats/add.tsx';
-import { BoatDashboard } from './pages/boats/dashboard.tsx';
-import { AddIntervention } from './pages/boats/interventions/add.tsx';
-import { InterventionList } from './pages/boats/interventions/list.tsx';
-import { ShowIntervention } from './pages/boats/interventions/show.tsx';
-import { ListBoat } from './pages/boats/list.tsx';
+
+import { BoatMenu } from '@/components/boat-menu.tsx';
+import { Layout } from '@/components/layout.tsx';
+import { AddBoat } from '@/pages/boats/add.tsx';
+import { BoatDashboard } from '@/pages/boats/dashboard.tsx';
+import { AddIntervention } from '@/pages/boats/interventions/add.tsx';
+import { InterventionList } from '@/pages/boats/interventions/list.tsx';
+import { ShowIntervention } from '@/pages/boats/interventions/show.tsx';
+import { ListBoat } from '@/pages/boats/list.tsx';
 
 const AppRouter = () => {
   return (
