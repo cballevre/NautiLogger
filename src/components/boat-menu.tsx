@@ -14,18 +14,6 @@ const items: MenuItem[] = [
     label: 'Interventions',
     key: 'interventions',
   },
-  {
-    label: 'Maintenance',
-    key: 'maintenance',
-  },
-  {
-    label: 'Equipment',
-    key: 'equipment',
-  },
-  {
-    label: 'Expenses',
-    key: 'expenses',
-  },
 ];
 
 const BoatMenu = () => {
