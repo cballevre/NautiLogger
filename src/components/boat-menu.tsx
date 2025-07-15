@@ -30,19 +30,22 @@ const items: MenuItem[] = [
 
 const BoatMenu = () => {
   const { pathname } = useLocation();
-  const selectedKey = pathname.split('/').filter(Boolean).pop();
   const go = useGo();
+
+  const keys = pathname.split('/').filter(Boolean);
 
   const onItemClick = (e: { key: string }) => {
     go({
-      to: pathname.replace(selectedKey || 'dashboard', e.key),
+      to: `/boats/${keys[1]}/${e.key}`,
     });
   };
+
+  const selectedKey = keys[2] || 'dashboard';
 
   return (
     <Menu
       mode="horizontal"
-      selectedKeys={[selectedKey || 'dashboard']}
+      selectedKeys={[selectedKey]}
       items={items}
       style={{ flex: 1, minWidth: 0 }}
       onClick={onItemClick}
