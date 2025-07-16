@@ -104,7 +104,8 @@
     "menu": {
       "dashboard": "Dashboard",
       "interventions": "Interventions",
-      "equipments": "Equipments"
+      "equipments": "Equipments",
+      "settings": "Settings"
     }
   },
   "equipments": {
@@ -125,5 +126,11 @@
         "description": "Description"
       }
     }
+  },
+  "CommonSettings": {
+    "title": "General Settings"
+  },
+  "AccessSettings": {
+    "title": "Access Settings"
   }
 }

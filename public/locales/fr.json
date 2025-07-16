@@ -104,7 +104,8 @@
     "menu": {
       "dashboard": "Tableau de bord",
       "interventions": "Interventions",
-      "equipments": "Équipements"
+      "equipments": "Équipements",
+      "settings": "Paramètres"
     }
   },
   "equipments": {
@@ -129,5 +130,11 @@
         "description": "Description"
       }
     }
+  },
+  "CommonSettings": {
+    "title": "Paramètres généraux"
+  },
+  "AccessSettings": {
+    "title": "Paramètres d'accès"
   }
 }

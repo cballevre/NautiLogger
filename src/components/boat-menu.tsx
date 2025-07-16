@@ -15,6 +15,9 @@ const items: MenuItem[] = [
   {
     key: 'equipments',
   },
+  {
+    key: 'settings',
+  },
 ];
 
 const BoatMenu = () => {

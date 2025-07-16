@@ -16,6 +16,8 @@ import { EditIntervention } from '@/pages/boats/interventions/edit';
 import { InterventionList } from '@/pages/boats/interventions/list.tsx';
 import { ShowIntervention } from '@/pages/boats/interventions/show.tsx';
 import { ListBoat } from '@/pages/boats/list.tsx';
+import { AccessSettings } from '@/pages/boats/settings/access.tsx';
+import { CommonSettings } from '@/pages/boats/settings/common';
 
 const AppRouter = () => {
   return (
@@ -49,6 +51,10 @@ const AppRouter = () => {
               <Route index element={<ShowEquipment />} />
               <Route path="edit" element={<EditEquipment />} />
             </Route>
+          </Route>
+          <Route path="settings">
+            <Route index element={<CommonSettings />} />
+            <Route path="access" element={<AccessSettings />} />
           </Route>
         </Route>
       </Route>
