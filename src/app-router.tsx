@@ -1,6 +1,5 @@
 import { AuthPage } from '@refinedev/antd';
 import { Authenticated } from '@refinedev/core';
-import { NavigateToResource } from '@refinedev/react-router';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 
 import { BoatMenu } from '@/components/boat-menu.tsx';
@@ -52,7 +51,7 @@ const AppRouter = () => {
       <Route
         element={
           <Authenticated key="auth-pages" fallback={<Outlet />}>
-            <NavigateToResource />
+            <Navigate to="/" />
           </Authenticated>
         }
       >
