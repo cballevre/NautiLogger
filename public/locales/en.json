@@ -132,5 +132,11 @@
   },
   "AccessSettings": {
     "title": "Access Settings"
+  },
+  "AccessList": {
+    "empty": {
+      "description": "You haven't invited anyone yet",
+      "action": "Add people"
+    }
   }
 }

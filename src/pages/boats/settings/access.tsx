@@ -1,5 +1,6 @@
 import { useTranslation } from '@refinedev/core';
 
+import { AccessList } from '@/components/access-list';
 import { SettingsLayout } from '@/components/settings-layout';
 
 const AccessSettings = () => {
@@ -7,7 +8,7 @@ const AccessSettings = () => {
 
   return (
     <SettingsLayout title={translate('AccessSettings.title')}>
-      <p>Manage who can access your boat.</p>
+      <AccessList />
     </SettingsLayout>
   );
 };
