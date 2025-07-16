@@ -5,6 +5,7 @@ import { Navigate, Outlet, Route, Routes } from 'react-router';
 
 import { BoatMenu } from '@/components/boat-menu.tsx';
 import { Layout } from '@/components/layout.tsx';
+import { Login } from '@/pages/auth/login.tsx';
 import { AddBoat } from '@/pages/boats/add.tsx';
 import { BoatDashboard } from '@/pages/boats/dashboard.tsx';
 import { AddIntervention } from '@/pages/boats/interventions/add.tsx';
@@ -55,7 +56,7 @@ const AppRouter = () => {
           </Authenticated>
         }
       >
-        <Route path="/login" element={<AuthPage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<AuthPage type="register" />} />
         <Route
           path="/forgot-password"
