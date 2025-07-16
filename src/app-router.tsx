@@ -65,6 +65,7 @@ const AppRouter = () => {
           path="/update-password"
           element={<AuthPage type="updatePassword" />}
         />
+        <Route path="/*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
   );
