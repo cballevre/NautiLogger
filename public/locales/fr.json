@@ -9,6 +9,9 @@
         "email": "E-mail",
         "password": "Mot de passe"
       },
+      "providers": {
+        "google": "Se connecter avec Google"
+      },
       "errors": {
         "validEmail": "Adresse e-mail invalide",
         "requiredEmail": "L'e-mail est requis",
