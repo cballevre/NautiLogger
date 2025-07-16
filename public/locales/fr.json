@@ -1,4 +1,71 @@
 {
+  "pages": {
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "signin": "Se connecter",
+      "signup": "S'inscrire",
+      "divider": "ou",
+      "fields": {
+        "email": "E-mail",
+        "password": "Mot de passe"
+      },
+      "errors": {
+        "validEmail": "Adresse e-mail invalide",
+        "requiredEmail": "L'e-mail est requis",
+        "requiredPassword": "Le mot de passe est requis"
+      },
+      "buttons": {
+        "submit": "Connexion",
+        "forgotPassword": "Mot de passe oublié ?",
+        "noAccount": "Vous n'avez pas de compte ?",
+        "rememberMe": "Se souvenir de moi"
+      }
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié ?",
+      "fields": {
+        "email": "E-mail"
+      },
+      "errors": {
+        "validEmail": "Adresse e-mail invalide",
+        "requiredEmail": "L'e-mail est requis"
+      },
+      "buttons": {
+        "submit": "Envoyer les instructions de réinitialisation"
+      }
+    },
+    "register": {
+      "title": "Créez votre compte",
+      "fields": {
+        "email": "E-mail",
+        "password": "Mot de passe"
+      },
+      "errors": {
+        "validEmail": "Adresse e-mail invalide",
+        "requiredEmail": "L'e-mail est requis",
+        "requiredPassword": "Le mot de passe est requis"
+      },
+      "buttons": {
+        "submit": "S'inscrire",
+        "haveAccount": "Vous avez déjà un compte ?"
+      }
+    },
+    "updatePassword": {
+      "title": "Mettre à jour le mot de passe",
+      "fields": {
+        "password": "Nouveau mot de passe",
+        "confirmPassword": "Confirmer le nouveau mot de passe"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Les mots de passe ne correspondent pas",
+        "requiredPassword": "Le mot de passe est requis",
+        "requiredConfirmPassword": "La confirmation du mot de passe est requise"
+      },
+      "buttons": {
+        "submit": "Mettre à jour"
+      }
+    }
+  },
   "LogoutButton": {
     "label": "Déconnexion"
   },

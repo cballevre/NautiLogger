@@ -1,4 +1,71 @@
 {
+  "pages": {
+    "login": {
+      "title": "Sign in to your account",
+      "signin": "Sign in",
+      "signup": "Sign up",
+      "divider": "or",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required"
+      },
+      "buttons": {
+        "submit": "Login",
+        "forgotPassword": "Forgot password?",
+        "noAccount": "Don’t have an account?",
+        "rememberMe": "Remember me"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required"
+      },
+      "buttons": {
+        "submit": "Send reset instructions"
+      }
+    },
+    "register": {
+      "title": "Sign up for your account",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required"
+      },
+      "buttons": {
+        "submit": "Register",
+        "haveAccount": "Have an account?"
+      }
+    },
+    "updatePassword": {
+      "title": "Update password",
+      "fields": {
+        "password": "New Password",
+        "confirmPassword": "Confirm new password"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Passwords do not match",
+        "requiredPassword": "Password required",
+        "requiredConfirmPassword": "Confirm password is required"
+      },
+      "buttons": {
+        "submit": "Update"
+      }
+    }
+  },
   "LogoutButton": {
     "label": "Logout"
   },
