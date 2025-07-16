@@ -135,7 +135,11 @@
     "title": "Paramètres généraux"
   },
   "AccessSettings": {
-    "title": "Paramètres d'accès"
+    "title": "Paramètres d'accès",
+    "dangerZone": {
+      "title": "Zone de danger",
+      "description": "Zone de danger : Faites attention aux fonctionnalités suivantes car elles sont irréversibles."
+    }
   },
   "AccessList": {
     "empty": {
