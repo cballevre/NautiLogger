@@ -7,6 +7,7 @@ import { Layout } from '@/components/layout.tsx';
 import { Login } from '@/pages/auth/login.tsx';
 import { AddBoat } from '@/pages/boats/add.tsx';
 import { BoatDashboard } from '@/pages/boats/dashboard.tsx';
+import { EquipmentList } from '@/pages/boats/equipments/list';
 import { AddIntervention } from '@/pages/boats/interventions/add.tsx';
 import { EditIntervention } from '@/pages/boats/interventions/edit';
 import { InterventionList } from '@/pages/boats/interventions/list.tsx';
@@ -45,6 +46,9 @@ const AppRouter = () => {
               <Route index element={<ShowIntervention />} />
               <Route path="edit" element={<EditIntervention />} />
             </Route>
+          </Route>
+          <Route path="equipments">
+            <Route index element={<EquipmentList />} />
           </Route>
         </Route>
       </Route>
