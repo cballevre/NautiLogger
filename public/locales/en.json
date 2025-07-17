@@ -106,5 +106,24 @@
       "interventions": "Interventions",
       "equipments": "Equipments"
     }
+  },
+  "equipments": {
+    "list": {
+      "title": "Equipment List",
+      "subtitle": "Manage your boat's equipment",
+      "add": "Add Equipment"
+    },
+    "add": {
+      "title": "Add an equipment"
+    },
+    "edit": {
+      "title": "Edit the equipment"
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "description": "Description"
+      }
+    }
   }
 }
