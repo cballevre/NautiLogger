@@ -67,6 +67,9 @@
       "buttons": {
         "submit": "Mettre à jour"
       }
+    },
+    "dashboard": {
+      "title": "Tableau de bord"
     }
   },
   "LogoutButton": {
@@ -96,5 +99,12 @@
   },
   "InterventionShow": {
     "edit": "Modifier l'intervention"
+  },
+  "boats": {
+    "menu": {
+      "dashboard": "Tableau de bord",
+      "interventions": "Interventions",
+      "equipments": "Équipements"
+    }
   }
 }
