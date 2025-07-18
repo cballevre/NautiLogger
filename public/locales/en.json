@@ -96,5 +96,12 @@
   },
   "InterventionShow": {
     "edit": "Edit Intervention"
+  },
+  "boats": {
+    "menu": {
+      "dashboard": "Dashboard",
+      "interventions": "Interventions",
+      "equipments": "Equipments"
+    }
   }
 }
