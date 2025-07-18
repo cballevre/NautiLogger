@@ -22,16 +22,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         >
           Nauti Logger
         </Link>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={[]}
-          style={{ flex: 1, minWidth: 0 }}
-        />
         <LogoutButton style={{ marginLeft: 'auto', color: 'white' }} />
       </Header>
-      <Content style={{ padding: '0 48px' }}>{children}</Content>
+      <Content>{children}</Content>
       <Footer style={{ textAlign: 'center' }}>
         &copy; {new Date().getFullYear()} Nauti Logger created by
         <a style={{ marginLeft: 4 }} href="https://cballevre.net">

@@ -2,6 +2,9 @@ import { PlusOutlined } from '@ant-design/icons';
 import { useGo, useList, useTranslation } from '@refinedev/core';
 import { Card, Col, Row } from 'antd';
 
+import { PageHeader } from '@/components/page-header';
+import { PageLayout } from '@/components/page-layout';
+
 const ListBoat = () => {
   const { data: boats } = useList({
     resource: 'boats',
@@ -11,8 +14,8 @@ const ListBoat = () => {
   const go = useGo();
 
   return (
-    <div>
-      <h1>{translate('ListBoat.title')}</h1>
+    <PageLayout>
+      <PageHeader title={translate('ListBoat.title')} />
       <Row gutter={16}>
         {boats?.data?.map((boat) => (
           <Col span={6} key={boat.id}>
@@ -53,7 +56,7 @@ const ListBoat = () => {
           </Card>
         </Col>
       </Row>
-    </div>
+    </PageLayout>
   );
 };
 
