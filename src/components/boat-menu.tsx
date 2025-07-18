@@ -43,7 +43,7 @@ const BoatMenu = () => {
       mode="horizontal"
       selectedKeys={[selectedKey]}
       items={translatedItems}
-      style={{ flex: 1, minWidth: 0 }}
+      style={{ padding: '0 32px' }}
       onClick={onItemClick}
     />
   );

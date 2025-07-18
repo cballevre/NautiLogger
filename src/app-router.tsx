@@ -2,7 +2,7 @@ import { AuthPage } from '@refinedev/antd';
 import { Authenticated } from '@refinedev/core';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 
-import { BoatMenu } from '@/components/boat-menu.tsx';
+import { BoatLayout } from '@/components/boat-layout';
 import { Layout } from '@/components/layout.tsx';
 import { Login } from '@/pages/auth/login.tsx';
 import { AddBoat } from '@/pages/boats/add.tsx';
@@ -27,15 +27,7 @@ const AppRouter = () => {
       >
         <Route index element={<ListBoat />} />
         <Route path="/boats/add" element={<AddBoat />} />
-        <Route
-          path="/boats/:boatId"
-          element={
-            <>
-              <BoatMenu />
-              <Outlet />
-            </>
-          }
-        >
+        <Route path="/boats/:boatId" element={<BoatLayout />}>
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<BoatDashboard />} />
           <Route path="interventions">
