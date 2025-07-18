@@ -67,6 +67,9 @@
       "buttons": {
         "submit": "Update"
       }
+    },
+    "dashboard": {
+      "title": "Tableau de bord"
     }
   },
   "LogoutButton": {
