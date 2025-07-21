@@ -106,6 +106,53 @@
       "interventions": "Interventions",
       "equipments": "Equipments",
       "settings": "Settings"
+    },
+    "systems": {
+      "select": {
+        "placeholder": "Select a system"
+      },
+      "list": {
+        "hull_and_deck": {
+          "name": "Hull and deck",
+          "description": "Includes the boat structure, keel, rudder, portholes, hatches, and winches."
+        },
+        "sails_and_rigging": {
+          "name": "Sails and rigging",
+          "description": "Sails, mast, forestay, shrouds, halyards, sheets, and sail furlers."
+        },
+        "engine_and_propulsion": {
+          "name": "Engine and propulsion",
+          "description": "Main engine, transmission, propeller, fuel tanks, and cooling system."
+        },
+        "plumbing": {
+          "name": "Plumbing",
+          "description": "Freshwater system, water pumps, marine toilets, water tanks, and drainage system."
+        },
+        "electrical": {
+          "name": "Electrical",
+          "description": "Batteries, solar panels, wind turbines, alternator, charge regulator, battery charger, and electrical wiring."
+        },
+        "electronics_and_navigation": {
+          "name": "Electronics and navigation",
+          "description": "GPS, radar, depth sounder, autopilot, VHF, AIS, and navigation instruments."
+        },
+        "safety": {
+          "name": "Safety",
+          "description": "Life jackets, life raft, distress flares, fire extinguishers, and personal safety equipment."
+        },
+        "comfort_and_interior": {
+          "name": "Comfort and interior",
+          "description": "Galley, refrigerator, heating, interior lighting, and furniture."
+        },
+        "anchor_and_mooring": {
+          "name": "Anchor and mooring",
+          "description": "Anchor, anchor chain, windlass, and mooring equipment."
+        },
+        "miscellaneous": {
+          "name": "Miscellaneous",
+          "description": "Deck equipment, fishing gear, and various accessories."
+        }
+      }
     }
   },
   "equipments": {
@@ -123,7 +170,8 @@
     "form": {
       "labels": {
         "name": "Name",
-        "description": "Description"
+        "description": "Description",
+        "system": "System"
       }
     }
   },

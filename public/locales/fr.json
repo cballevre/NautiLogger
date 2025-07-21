@@ -106,6 +106,53 @@
       "interventions": "Interventions",
       "equipments": "Équipements",
       "settings": "Paramètres"
+    },
+    "systems": {
+      "select": {
+        "placeholder": "Sélectionnez un système"
+      },
+      "list": {
+        "hull_and_deck": {
+          "name": "Coque et pont",
+          "description": "Inclut la structure du bateau, la quille, le gouvernail, les hublots, les écoutilles, et les winches."
+        },
+        "sails_and_rigging": {
+          "name": "Voiles et gréement",
+          "description": "Voiles, mât, étai, haubans, drisses, écoutes, et enrouleurs de voiles."
+        },
+        "engine_and_propulsion": {
+          "name": "Moteur et propulsion",
+          "description": "Moteur principal, transmission, hélice, réservoirs de carburant, et système de refroidissement."
+        },
+        "plumbing": {
+          "name": "Plomberie",
+          "description": "Système d'eau douce, pompes à eau, toilettes marines, réservoirs d'eau, et système de drainage."
+        },
+        "electrical": {
+          "name": "Électricité",
+          "description": "Batteries, panneaux solaires, éoliennes, alternateur, régulateur de charge, chargeur de batteries et câblage électrique."
+        },
+        "electronics_and_navigation": {
+          "name": "Électronique et navigation",
+          "description": "GPS, radar, sondeur, pilote automatique, VHF, AIS, et instruments de navigation."
+        },
+        "safety": {
+          "name": "Sécurité",
+          "description": "Gilets de sauvetage, radeau de survie, fusées de détresse, extincteurs, et équipement de sécurité personnel."
+        },
+        "comfort_and_interior": {
+          "name": "Confort et intérieur",
+          "description": "Cuisine, réfrigérateur, chauffage, éclairage intérieur, et mobilier."
+        },
+        "anchor_and_mooring": {
+          "name": "Ancre et mouillage",
+          "description": "Ancre, chaîne d'ancre, guindeau, et équipement de mouillage."
+        },
+        "miscellaneous": {
+          "name": "Divers",
+          "description": "Équipement de pont, équipement de pêche, et accessoires divers."
+        }
+      }
     }
   },
   "equipments": {
@@ -127,7 +174,8 @@
     "form": {
       "labels": {
         "name": "Nom",
-        "description": "Description"
+        "description": "Description",
+        "system": "Système"
       }
     }
   },
