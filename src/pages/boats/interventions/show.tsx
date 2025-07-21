@@ -1,7 +1,8 @@
 import { Link, useOne, useTranslation } from '@refinedev/core';
-import { Typography } from 'antd';
+import { Button, Typography } from 'antd';
 import { useParams } from 'react-router';
 
+import { PageHeader } from '@/components/page-header';
 import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const ShowIntervention = () => {
@@ -16,10 +17,16 @@ const ShowIntervention = () => {
 
   return (
     <div>
-      <Typography.Title level={2}>{intervention?.data.title}</Typography.Title>
-      <Link to={`/boats/${boat?.data.id}/interventions/${interventionId}/edit`}>
-        {translate('InterventionShow.edit')}
-      </Link>
+      <PageHeader
+        title={intervention?.data.title}
+        actions={
+          <Link
+            to={`/boats/${boat?.data.id}/interventions/${interventionId}/edit`}
+          >
+            <Button type="primary">{translate('InterventionShow.edit')}</Button>
+          </Link>
+        }
+      />
       <div
         style={{ padding: '0px 16px', background: '#fff', borderRadius: '8px' }}
       >

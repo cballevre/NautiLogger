@@ -25,17 +25,12 @@ const AddIntervention = () => {
   };
 
   return (
-    <div>
-      <Create
-        saveButtonProps={saveButtonProps}
-        title={translate('AddIntervention.title')}
-      >
-        <InterventionForm
-          formProps={formProps}
-          handleOnFinish={handleOnFinish}
-        />
-      </Create>
-    </div>
+    <Create
+      saveButtonProps={saveButtonProps}
+      title={translate('AddIntervention.title')}
+    >
+      <InterventionForm formProps={formProps} handleOnFinish={handleOnFinish} />
+    </Create>
   );
 };
 
