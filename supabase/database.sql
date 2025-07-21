@@ -121,4 +121,28 @@ using (
   WHERE (accesses.user_id = auth.uid())))
 );
 
+create policy "Owners can manage equipments of their boats"
+on "public"."equipments"
+to authenticated
+using (
+  (boat_id IN ( SELECT boats.id
+   FROM boats
+  WHERE (( SELECT auth.uid() AS uid) = boats.owner_id)))
+) with check (
+  (boat_id IN ( SELECT boats.id
+   FROM boats
+  WHERE (( SELECT auth.uid() AS uid) = boats.owner_id)))
+);
 
+create policy "Users can manage the equipments of their boats to which they have access"
+on "public"."equipments"
+to authenticated
+using (
+  (boat_id IN ( SELECT accesses.boat_id
+   FROM accesses
+  WHERE (accesses.user_id = auth.uid())))
+) with check (
+  (boat_id IN ( SELECT accesses.boat_id
+   FROM accesses
+  WHERE (accesses.user_id = auth.uid())))
+);
