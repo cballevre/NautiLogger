@@ -1,5 +1,4 @@
-import { useGo } from '@refinedev/core';
-import type { MenuProps } from 'antd';
+import { useGo, useTranslation } from '@refinedev/core';
 import { Menu } from 'antd';
 import { useLocation } from 'react-router';
 
@@ -7,11 +6,9 @@ import type { MenuItem } from '@/components/boat-menu';
 
 const items: MenuItem[] = [
   {
-    label: 'General',
     key: 'common',
   },
   {
-    label: 'Access',
     key: 'access',
   },
 ];
@@ -19,6 +16,7 @@ const items: MenuItem[] = [
 const SettingsMenu = () => {
   const { pathname } = useLocation();
   const go = useGo();
+  const { translate } = useTranslation();
 
   const keys = pathname.split('/').filter(Boolean);
 
@@ -34,13 +32,22 @@ const SettingsMenu = () => {
     }
   };
 
+  const translatedItems = items.map((item) =>
+    item
+      ? {
+          ...item,
+          label: translate(`settings.menu.${item.key}`),
+        }
+      : item,
+  );
+
   const selectedKey = keys[3] || 'common';
 
   return (
     <Menu
       mode="vertical"
       selectedKeys={[selectedKey]}
-      items={items}
+      items={translatedItems}
       onClick={onItemClick}
     />
   );

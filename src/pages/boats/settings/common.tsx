@@ -7,14 +7,14 @@ const CommonSettings = () => {
   const { translate } = useTranslation();
 
   return (
-    <SettingsLayout title={translate('CommonSettings.title')}>
+    <SettingsLayout title={translate('settings.common.title')}>
       <section>
         <header>
           <Typography.Title level={3}>
-            {translate('CommonSettings.dangerZone.title')}
+            {translate('settings.common.dangerZone.title')}
           </Typography.Title>
           <Typography.Paragraph>
-            {translate('CommonSettings.dangerZone.description')}
+            {translate('settings.common.dangerZone.description')}
           </Typography.Paragraph>
         </header>
         <div>
