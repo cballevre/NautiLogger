@@ -13,7 +13,6 @@ const items: MenuItem[] = [
     key: 'interventions',
   },
   {
-    label: 'Equipments',
     key: 'equipments',
   },
 ];
