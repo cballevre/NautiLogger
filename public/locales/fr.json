@@ -131,20 +131,24 @@
       }
     }
   },
-  "CommonSettings": {
-    "title": "Paramètres généraux"
-  },
-  "AccessSettings": {
-    "title": "Paramètres d'accès",
-    "dangerZone": {
-      "title": "Zone de danger",
-      "description": "Zone de danger : Faites attention aux fonctionnalités suivantes car elles sont irréversibles."
-    }
-  },
-  "AccessList": {
-    "empty": {
-      "description": "Vous n'avez encore invité personne",
-      "action": "Ajouter des personnes"
+  "settings": {
+    "menu": {
+      "common": "Général",
+      "access": "Accès"
+    },
+    "common": {
+      "title": "Paramètres généraux",
+      "dangerZone": {
+        "title": "Zone de danger",
+        "description": "Zone de danger : Faites attention aux fonctionnalités suivantes car elles sont irréversibles."
+      }
+    },
+    "access": {
+      "title": "Paramètres d'accès",
+      "empty": {
+        "description": "Vous n'avez encore invité personne",
+        "action": "Ajouter des personnes"
+      }
     }
   }
 }

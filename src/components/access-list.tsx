@@ -41,9 +41,9 @@ const AccessList = () => {
   if (accesses.data.length === 0) {
     return (
       <>
-        <Empty description={translate('AccessList.empty.description')}>
+        <Empty description={translate('settings.access.empty.description')}>
           <Button type="primary" onClick={handleAddAccess}>
-            {translate('AccessList.empty.action')}
+            {translate('settings.access.empty.action')}
           </Button>
         </Empty>
         <AddAccess open={isModalOpen} onCancel={handleCancel} />

@@ -7,7 +7,7 @@ const AccessSettings = () => {
   const { translate } = useTranslation();
 
   return (
-    <SettingsLayout title={translate('AccessSettings.title')}>
+    <SettingsLayout title={translate('settings.access.title')}>
       <AccessList />
     </SettingsLayout>
   );

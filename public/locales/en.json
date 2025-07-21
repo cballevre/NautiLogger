@@ -127,20 +127,24 @@
       }
     }
   },
-  "CommonSettings": {
-    "title": "General Settings",
-    "dangerZone": {
-      "title": "Danger Zone",
-      "description": "Danger zone Be wary of the following features as they cannot be undone."
-    }
-  },
-  "AccessSettings": {
-    "title": "Access Settings"
-  },
-  "AccessList": {
-    "empty": {
-      "description": "You haven't invited anyone yet",
-      "action": "Add people"
+  "settings": {
+    "menu": {
+      "common": "General",
+      "access": "Access"
+    },
+    "common": {
+      "title": "General Settings",
+      "dangerZone": {
+        "title": "Danger Zone",
+        "description": "Danger zone Be wary of the following features as they cannot be undone."
+      }
+    },
+    "access": {
+      "title": "Access Settings",
+      "empty": {
+        "description": "You haven't invited anyone yet",
+        "action": "Add people"
+      }
     }
   }
 }
