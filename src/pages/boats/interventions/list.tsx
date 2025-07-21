@@ -1,6 +1,7 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
-import { List, Typography } from 'antd';
+import { Button, List, Typography } from 'antd';
 
+import { PageHeader } from '@/components/page-header';
 import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const InterventionList = () => {
@@ -13,12 +14,14 @@ const InterventionList = () => {
 
   return (
     <div>
-      <Typography.Title level={2}>
-        {translate('InterventionList.title')}
-      </Typography.Title>
-      <Link to={`/boats/${boat?.data.id}/interventions/add`}>
-        {translate('InterventionList.add')}
-      </Link>
+      <PageHeader
+        title={translate('InterventionList.title')}
+        actions={
+          <Link to={`/boats/${boat?.data.id}/interventions/add`}>
+            <Button type="primary">{translate('InterventionList.add')}</Button>
+          </Link>
+        }
+      />
       <div
         style={{ padding: '0px 16px', background: '#fff', borderRadius: '8px' }}
       >
