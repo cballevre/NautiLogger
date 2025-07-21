@@ -2,6 +2,7 @@ import { Link, useOne, useTranslation } from '@refinedev/core';
 import { Button, Typography } from 'antd';
 import { useParams } from 'react-router';
 
+import { PageContent } from '@/components/page-content';
 import { PageHeader } from '@/components/page-header';
 import { useCurrentBoat } from '@/hooks/use-current-boat';
 
@@ -16,7 +17,7 @@ const ShowIntervention = () => {
   const { translate } = useTranslation();
 
   return (
-    <div>
+    <>
       <PageHeader
         title={intervention?.data.title}
         actions={
@@ -27,14 +28,12 @@ const ShowIntervention = () => {
           </Link>
         }
       />
-      <div
-        style={{ padding: '0px 16px', background: '#fff', borderRadius: '8px' }}
-      >
+      <PageContent>
         <Typography.Paragraph>
           {intervention?.data.description}
         </Typography.Paragraph>
-      </div>
-    </div>
+      </PageContent>
+    </>
   );
 };
 

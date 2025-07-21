@@ -1,6 +1,7 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
 import { Button, List, Typography } from 'antd';
 
+import { PageContent } from '@/components/page-content';
 import { PageHeader } from '@/components/page-header';
 import { useCurrentBoat } from '@/hooks/use-current-boat';
 
@@ -13,7 +14,7 @@ const InterventionList = () => {
   const { translate } = useTranslation();
 
   return (
-    <div>
+    <>
       <PageHeader
         title={translate('InterventionList.title')}
         actions={
@@ -22,9 +23,7 @@ const InterventionList = () => {
           </Link>
         }
       />
-      <div
-        style={{ padding: '0px 16px', background: '#fff', borderRadius: '8px' }}
-      >
+      <PageContent>
         <List
           itemLayout="horizontal"
           dataSource={interventions?.data || []}
@@ -43,8 +42,8 @@ const InterventionList = () => {
             </List.Item>
           )}
         />
-      </div>
-    </div>
+      </PageContent>
+    </>
   );
 };
 
