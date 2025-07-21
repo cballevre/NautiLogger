@@ -1,6 +1,6 @@
 import { Link } from '@refinedev/core';
 import type { MenuProps } from 'antd';
-import { Layout as LayoutAntd, Menu } from 'antd';
+import { Layout as LayoutAntd } from 'antd';
 import type { FC } from 'react';
 
 import { LogoutButton } from './logout-button';

@@ -1,5 +1,5 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
-import { Button, List, Typography } from 'antd';
+import { Button, List } from 'antd';
 
 import { PageContent } from '@/components/page-content';
 import { PageHeader } from '@/components/page-header';
