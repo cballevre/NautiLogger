@@ -28,11 +28,16 @@ const ShowEquipment = () => {
       />
       <PageContent>
         <Typography.Paragraph>
-          <strong>{translate('equipments.form.labels.name')}:</strong>
+          <strong>{translate('equipments.form.labels.name')}: </strong>
           {equipment?.data.name}
         </Typography.Paragraph>
         <Typography.Paragraph>
+          <strong>{translate('equipments.form.labels.description')}: </strong>
           {equipment?.data.description}
+        </Typography.Paragraph>
+        <Typography.Paragraph>
+          <strong>{translate('equipments.form.labels.system')}: </strong>
+          {translate(`boats.systems.list.${equipment?.data.system_key}.name`)}
         </Typography.Paragraph>
       </PageContent>
     </>
