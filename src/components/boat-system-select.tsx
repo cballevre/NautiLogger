@@ -2,18 +2,7 @@ import { useTranslation } from '@refinedev/core';
 import { Select } from 'antd';
 import type { FC } from 'react';
 
-const boatSystemKeys = [
-  'hull_and_deck',
-  'sails_and_rigging',
-  'engine_and_propulsion',
-  'plumbing',
-  'electrical',
-  'electronics_and_navigation',
-  'safety',
-  'comfort_and_interior',
-  'anchor_and_mooring',
-  'miscellaneous',
-];
+import { boatSystemList } from '@/models/boat-system.ts';
 
 interface BoatSystemSelectProps {
   value?: string;
@@ -24,7 +13,7 @@ interface BoatSystemSelectProps {
 const BoatSystemSelect: FC<BoatSystemSelectProps> = ({ value, onChange }) => {
   const { translate } = useTranslation();
 
-  const options = boatSystemKeys.map((key) => ({
+  const options = boatSystemList.map((key) => ({
     value: key,
     label: translate(`boats.systems.list.${key}.name`),
   }));
