@@ -1,5 +1,5 @@
 import { Create, useForm } from '@refinedev/antd';
-import { useTranslation } from '@refinedev/core';
+import { useGo, useTranslation } from '@refinedev/core';
 
 import { EquipmentForm } from '@/components/equipment-form.tsx';
 import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
@@ -11,16 +11,22 @@ interface EquipmentFormValues {
 const AddEquipment = () => {
   const { data: boat } = useCurrentBoat();
   const { translate } = useTranslation();
+  const go = useGo();
 
   const { formProps, saveButtonProps, onFinish } = useForm({
     resource: 'equipments',
     action: 'create',
+    redirect: false,
   });
 
   const handleOnFinish = (values: EquipmentFormValues) => {
     onFinish({
       boat_id: boat?.data.id,
       ...values,
+    });
+    go({
+      to: `/boats/${boat?.data.id}/equipments`,
+      type: 'replace',
     });
   };
 
