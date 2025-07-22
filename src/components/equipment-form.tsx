@@ -30,7 +30,7 @@ const EquipmentForm: FC<EquipmentFormProps> = ({
         label={translate('equipments.form.labels.description')}
         name="description"
       >
-        <Input />
+        <Input.TextArea rows={4} />
       </Form.Item>
     </Form>
   );
