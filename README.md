@@ -47,3 +47,7 @@ yarn dev
 ```
 
 The application will be available at `http://localhost:5173`.
+
+## Deployment
+
+For detailed deployment instructions, please refer to the [Deployment Documentation](./docs/deployment.md).
