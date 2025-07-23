@@ -1,5 +1,6 @@
 import { Link, useOne, useTranslation } from '@refinedev/core';
 import { Button, Typography } from 'antd';
+import dayjs from 'dayjs';
 import { useParams } from 'react-router';
 
 import { PageContent } from '@/components/page-content.tsx';
@@ -39,6 +40,53 @@ const ShowEquipment = () => {
           <strong>{translate('equipments.form.labels.system')}: </strong>
           {translate(`boats.systems.list.${equipment?.data.system_key}.name`)}
         </Typography.Paragraph>
+        {equipment?.data.brand ? (
+          <Typography.Paragraph>
+            <strong>{translate('equipments.form.labels.brand')}: </strong>
+            {equipment.data.brand}
+          </Typography.Paragraph>
+        ) : null}
+        {equipment?.data.model ? (
+          <Typography.Paragraph>
+            <strong>{translate('equipments.form.labels.model')}: </strong>
+            {equipment.data.model}
+          </Typography.Paragraph>
+        ) : null}
+        {equipment?.data.serial_number ? (
+          <Typography.Paragraph>
+            <strong>
+              {translate('equipments.form.labels.serial_number')}:{' '}
+            </strong>
+            {equipment.data.serial_number}
+          </Typography.Paragraph>
+        ) : null}
+        {equipment?.data.purchase_value ? (
+          <Typography.Paragraph>
+            <strong>
+              {translate('equipments.form.labels.purchase_value')}:{' '}
+            </strong>
+            {equipment.data.purchase_value.toLocaleString(undefined, {
+              style: 'currency',
+              currency: 'EUR',
+            })}
+          </Typography.Paragraph>
+        ) : null}
+        {equipment?.data.purchase_date ? (
+          <Typography.Paragraph>
+            <strong>
+              {translate('equipments.form.labels.purchase_date')}:{' '}
+            </strong>
+            {dayjs(equipment.data.purchase_date).format('DD/MM/YYYY')}
+          </Typography.Paragraph>
+        ) : null}
+        {equipment?.data.warranty_end_date ? (
+          <Typography.Paragraph>
+            <strong>
+              {translate('equipments.form.labels.warranty_end_date')}:{' '}
+            </strong>
+            {dayjs(equipment.data.warranty_end_date).format('DD/MM/YYYY')}
+          </Typography.Paragraph>
+        ) : null}
       </PageContent>
     </>
   );
