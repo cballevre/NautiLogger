@@ -1,5 +1,6 @@
 import { useTranslation } from '@refinedev/core';
-import { Form, Input } from 'antd';
+import { DatePicker, Form, Input, InputNumber } from 'antd';
+import dayjs from 'dayjs';
 import type { FC } from 'react';
 
 import { BoatSystemSelect } from '@/components/boat-system-select';
@@ -31,6 +32,38 @@ const EquipmentForm: FC<EquipmentFormProps> = ({
         name="description"
       >
         <Input.TextArea rows={4} />
+      </Form.Item>
+      <Form.Item label={translate('equipments.form.labels.brand')} name="brand">
+        <Input />
+      </Form.Item>
+      <Form.Item label={translate('equipments.form.labels.model')} name="model">
+        <Input />
+      </Form.Item>
+      <Form.Item
+        label={translate('equipments.form.labels.serial_number')}
+        name="serial_number"
+      >
+        <Input />
+      </Form.Item>
+      <Form.Item
+        label={translate('equipments.form.labels.warranty_end_date')}
+        name="warranty_end_date"
+        getValueProps={(value) => ({ value: value ? dayjs(value) : null })}
+      >
+        <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
+      </Form.Item>
+      <Form.Item
+        label={translate('equipments.form.labels.purchase_date')}
+        name="purchase_date"
+        getValueProps={(value) => ({ value: value ? dayjs(value) : null })}
+      >
+        <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
+      </Form.Item>
+      <Form.Item
+        label={translate('equipments.form.labels.purchase_value')}
+        name="purchase_value"
+      >
+        <InputNumber style={{ width: '100%' }} min={0} step={0.01} suffix="€" />
       </Form.Item>
     </Form>
   );

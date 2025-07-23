@@ -175,7 +175,13 @@
       "labels": {
         "name": "Nom",
         "description": "Description",
-        "system": "Système"
+        "system": "Système",
+        "brand": "Marque",
+        "model": "Modèle",
+        "serial_number": "Numéro de série",
+        "warranty_end_date": "Fin de garantie",
+        "purchase_value": "Valeur d'achat",
+        "purchase_date": "Date d'achat"
       }
     }
   },
