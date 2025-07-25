@@ -182,6 +182,20 @@
           "maxLength": null
         },
         {
+          "id": "public.accesses.role",
+          "name": "role",
+          "columnName": "role",
+          "type": "access_role",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
           "name": "users",
           "type": "users",
           "isRequired": true,
@@ -326,9 +340,9 @@
           "maxLength": null
         },
         {
-          "id": "public.boats.owner_id",
-          "name": "owner_id",
-          "columnName": "owner_id",
+          "id": "public.boats.created_by",
+          "name": "created_by",
+          "columnName": "created_by",
           "type": "uuid",
           "isRequired": true,
           "kind": "scalar",
@@ -374,7 +388,7 @@
           "kind": "object",
           "relationName": "boatsTousers",
           "relationFromFields": [
-            "owner_id"
+            "created_by"
           ],
           "relationToFields": [
             "id"
@@ -770,6 +784,138 @@
       ],
       "uniqueConstraints": []
     },
+    "equipment_attachments": {
+      "id": "public.equipment_attachments",
+      "schemaName": "public",
+      "tableName": "equipment_attachments",
+      "fields": [
+        {
+          "id": "public.equipment_attachments.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "uuid",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.equipment_attachments.equipment_id",
+          "name": "equipment_id",
+          "columnName": "equipment_id",
+          "type": "uuid",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.equipment_attachments.file_path",
+          "name": "file_path",
+          "columnName": "file_path",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.equipment_attachments.file_name",
+          "name": "file_name",
+          "columnName": "file_name",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.equipment_attachments.file_type",
+          "name": "file_type",
+          "columnName": "file_type",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.equipment_attachments.description",
+          "name": "description",
+          "columnName": "description",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.equipment_attachments.uploaded_at",
+          "name": "uploaded_at",
+          "columnName": "uploaded_at",
+          "type": "timestamptz",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "equipments",
+          "type": "equipments",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "equipment_attachmentsToequipments",
+          "relationFromFields": [
+            "equipment_id"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "attachments_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
     "equipments": {
       "id": "public.equipments",
       "schemaName": "public",
@@ -956,6 +1102,20 @@
             "id"
           ],
           "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "equipment_attachments",
+          "type": "equipment_attachments",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "equipment_attachmentsToequipments",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
           "isId": false,
           "isGenerated": false,
           "sequence": false,
@@ -5948,6 +6108,20 @@
         },
         {
           "name": "SUCCESS"
+        }
+      ]
+    },
+    "access_role": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "operator"
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "viewer"
         }
       ]
     },

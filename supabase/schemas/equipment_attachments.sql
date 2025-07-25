@@ -15,7 +15,6 @@ alter table public.equipment_attachments enable row level security;
 CREATE OR REPLACE FUNCTION check_equipment_access(equipment_id uuid)
 returns boolean
 language sql
-security DEFINER
 set search_path = ''
 as $$
   SELECT EXISTS (
@@ -33,5 +32,7 @@ to authenticated
 using (
   check_equipment_access(equipment_id)
 ) with check (
- check_equipment_access(equipment_id)
+  check_equipment_access(equipment_id)
 );
+
+create index if not exists idx_equipment_attachments_equipment_id on public.equipment_attachments(equipment_id);

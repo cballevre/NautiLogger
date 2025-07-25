@@ -14,7 +14,7 @@ const AddBoat = () => {
 
   const handleOnFinish = (values: {}) => {
     onFinish({
-      owner_id: identity?.id,
+      created_by: identity?.id,
       ...values,
     });
   };

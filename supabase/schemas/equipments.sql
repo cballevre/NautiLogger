@@ -17,28 +17,12 @@ create table public.equipments (
 
 alter table public.equipments enable row level security;
 
-create policy "Owners can manage equipments of their boats"
+create policy "Allow user manage equipments for their boats"
 on public.equipments
 to authenticated
 using (
-  (boat_id in (select boats.id
-  from boats
-  where ((select auth.uid() as uid) = boats.owner_id)))
+  has_boat_access(boat_id)
 ) with check (
-  (boat_id in (select boats.id
-  from boats
-  where ((select auth.uid() as uid) = boats.owner_id)))
+  has_boat_access(boat_id)
 );
 
-create policy "Users can manage the equipments of their boats to which they have access"
-on public.equipments
-to authenticated
-using (
-  (boat_id in (select accesses.boat_id
-  from accesses
-  where (accesses.user_id = auth.uid())))
-) with check (
-  (boat_id in (select accesses.boat_id
-  from accesses
-  where (accesses.user_id = auth.uid())))
-);

@@ -11,28 +11,11 @@ CREATE TABLE public.interventions (
 
 alter table public.interventions enable row level security;
 
-create policy "Enable owners to manage interventions onto their own boat only"
+create policy "Allow user manage interventions for their boats"
 on public.interventions
 to authenticated
 using (
-  (boat_id in (select boats.id
-  from boats
-  where ((select auth.uid() as uid) = boats.owner_id)))
+  has_boat_access(boat_id)
 ) with check (
-  (boat_id in (select boats.id
-  from boats
-  where ((select auth.uid() as uid) = boats.owner_id)))
-);
-
-create policy "Users can manage interventions for their boats"
-on public.interventions
-to authenticated
-using (
-  (boat_id in (select accesses.boat_id
-  from accesses
-  where (accesses.user_id = auth.uid())))
-) with check (
-  (boat_id in (select accesses.boat_id
-  from accesses
-  where (accesses.user_id = auth.uid())))
+  has_boat_access(boat_id)
 );
