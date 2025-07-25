@@ -35,5 +35,13 @@
         }
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["supabase/seeds/.snaplet/**"],
+      "formatter": {
+        "enabled": false
+      }
+    }
+  ]
 }
