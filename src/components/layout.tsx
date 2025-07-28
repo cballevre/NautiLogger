@@ -20,13 +20,14 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           to="/"
           style={{ color: 'white', fontSize: '24px', marginRight: '20px' }}
         >
-          Nauti Logger
+          <span>Vessel</span>
+          <span style={{ color: '#1890ff' }}>Vigil</span>
         </Link>
         <LogoutButton style={{ marginLeft: 'auto', color: 'white' }} />
       </Header>
       <Content>{children}</Content>
       <Footer style={{ textAlign: 'center' }}>
-        &copy; {new Date().getFullYear()} Nauti Logger created by
+        &copy; {new Date().getFullYear()} VesselVigil created by
         <a style={{ marginLeft: 4 }} href="https://cballevre.net">
           Célestin
         </a>
