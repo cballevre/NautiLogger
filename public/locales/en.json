@@ -1,4 +1,8 @@
 {
+  "common": {
+    "delete": "Delete",
+    "download": "Download"
+  },
   "pages": {
     "login": {
       "title": "Sign in to your account",
@@ -167,6 +171,10 @@
     "edit": {
       "title": "Edit the equipment"
     },
+    "show": {
+      "title": "Equipment Details",
+      "edit": "Edit Equipment"
+    },
     "form": {
       "labels": {
         "name": "Name",
@@ -179,6 +187,10 @@
         "purchase_value": "Purchase Value",
         "purchase_date": "Purchase Date"
       }
+    },
+    "attachments": {
+      "title": "Attachments",
+      "add": "Add an attachment"
     }
   },
   "settings": {

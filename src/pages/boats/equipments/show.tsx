@@ -1,9 +1,9 @@
 import { Link, useOne, useTranslation } from '@refinedev/core';
-import { Button, Typography } from 'antd';
+import { Button, Card, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { useParams } from 'react-router';
 
-import { PageContent } from '@/components/page-content.tsx';
+import { EquipmentAttachment } from '@/components/equipment-attachment';
 import { PageHeader } from '@/components/page-header.tsx';
 import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
 
@@ -12,7 +12,7 @@ const ShowEquipment = () => {
   const { equipmentId } = useParams();
   const { data: equipment } = useOne({
     resource: 'equipments',
-    id: equipmentId as string,
+    id: equipmentId,
   });
 
   const { translate } = useTranslation();
@@ -27,7 +27,7 @@ const ShowEquipment = () => {
           </Link>
         }
       />
-      <PageContent>
+      <Card>
         <Typography.Paragraph>
           <strong>{translate('equipments.form.labels.name')}: </strong>
           {equipment?.data.name}
@@ -87,7 +87,8 @@ const ShowEquipment = () => {
             {dayjs(equipment.data.warranty_end_date).format('DD/MM/YYYY')}
           </Typography.Paragraph>
         ) : null}
-      </PageContent>
+      </Card>
+      <EquipmentAttachment equipmentId={equipmentId} />
     </>
   );
 };
