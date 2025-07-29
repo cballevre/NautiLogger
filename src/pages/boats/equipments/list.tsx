@@ -3,6 +3,7 @@ import { Button, List, Typography } from 'antd';
 
 import { PageContent } from '@/components/page-content.tsx';
 import { PageHeader } from '@/components/page-header.tsx';
+import { SectionHeader } from '@/components/section-header.tsx';
 import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
 import { boatSystemList } from '@/models/boat-system';
 import type { Equipment } from '@/models/equipment';
@@ -43,10 +44,10 @@ const EquipmentList = () => {
         }
       />
       {sortedSystems.map((system) => (
-        <div key={system}>
-          <Typography.Title level={2}>
-            {translate(`boats.systems.list.${system}.name`)}
-          </Typography.Title>
+        <section key={system}>
+          <SectionHeader
+            title={translate(`boats.systems.list.${system}.name`)}
+          />
           <PageContent>
             <List
               itemLayout="horizontal"
@@ -67,7 +68,7 @@ const EquipmentList = () => {
               )}
             />
           </PageContent>
-        </div>
+        </section>
       ))}
     </div>
   );
