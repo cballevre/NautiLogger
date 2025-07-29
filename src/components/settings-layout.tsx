@@ -1,7 +1,8 @@
-import { Col, Row, Typography } from 'antd';
+import { Card, Col, Grid, Row } from 'antd';
 import type React from 'react';
 import type { ReactNode } from 'react';
 
+import { PageHeader } from '@/components/page-header';
 import { SettingsMenu } from '@/components/settings-menu.tsx';
 
 interface SettingsLayoutProps {
@@ -9,18 +10,22 @@ interface SettingsLayoutProps {
   title: string;
 }
 
-const SettingsLayout: React.FC<SettingsLayoutProps> = ({ children, title }) => (
-  <Row>
-    <Col flex={1} style={{ padding: '24px 0' }}>
-      <SettingsMenu />
-    </Col>
-    <Col flex={3} style={{ margin: 0, padding: 24, background: '#fff' }}>
-      <Typography.Title level={2} style={{ marginBottom: 24 }}>
-        {title}
-      </Typography.Title>
-      {children}
-    </Col>
-  </Row>
-);
+const { useBreakpoint } = Grid;
+
+const SettingsLayout: React.FC<SettingsLayoutProps> = ({ children, title }) => {
+  const screens = useBreakpoint();
+
+  return (
+    <Row gutter={[16, 16]} wrap={!screens.md}>
+      <Col flex={screens.md ? '200px' : 'none'}>
+        <SettingsMenu />
+      </Col>
+      <Col flex={'auto'}>
+        <PageHeader title={title} />
+        <Card>{children}</Card>
+      </Col>
+    </Row>
+  );
+};
 
 export { SettingsLayout };
