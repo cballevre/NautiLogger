@@ -1587,7 +1587,7 @@
           "name": "headers",
           "columnName": "headers",
           "type": "jsonb",
-          "isRequired": false,
+          "isRequired": true,
           "kind": "scalar",
           "isList": false,
           "isGenerated": false,
