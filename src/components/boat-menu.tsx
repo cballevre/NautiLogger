@@ -1,6 +1,6 @@
 import { useGo, useTranslation } from '@refinedev/core';
 import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
+import { Grid, Menu } from 'antd';
 import { useLocation } from 'react-router';
 
 export type MenuItem = Required<MenuProps>['items'][number];
@@ -20,10 +20,13 @@ const items: MenuItem[] = [
   },
 ];
 
+const { useBreakpoint } = Grid;
+
 const BoatMenu = () => {
   const { pathname } = useLocation();
   const go = useGo();
   const { translate } = useTranslation();
+  const screens = useBreakpoint();
 
   const keys = pathname.split('/').filter(Boolean);
 
@@ -49,7 +52,7 @@ const BoatMenu = () => {
       mode="horizontal"
       selectedKeys={[selectedKey]}
       items={translatedItems}
-      style={{ padding: '0 32px' }}
+      style={{ padding: screens.sm ? '0 32px' : '0' }}
       onClick={onItemClick}
     />
   );

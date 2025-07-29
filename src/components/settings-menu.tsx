@@ -45,7 +45,7 @@ const SettingsMenu = () => {
 
   return (
     <Menu
-      mode="vertical"
+      mode="inline"
       selectedKeys={[selectedKey]}
       items={translatedItems}
       onClick={onItemClick}
