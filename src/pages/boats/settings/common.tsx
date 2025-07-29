@@ -1,6 +1,7 @@
 import { useTranslation } from '@refinedev/core';
-import { Button, Typography } from 'antd';
+import { Button } from 'antd';
 
+import { SectionHeader } from '@/components/section-header';
 import { SettingsLayout } from '@/components/settings-layout';
 
 const CommonSettings = () => {
@@ -9,25 +10,19 @@ const CommonSettings = () => {
   return (
     <SettingsLayout title={translate('settings.common.title')}>
       <section>
-        <header>
-          <Typography.Title level={3}>
-            {translate('settings.common.dangerZone.title')}
-          </Typography.Title>
-          <Typography.Paragraph>
-            {translate('settings.common.dangerZone.description')}
-          </Typography.Paragraph>
-        </header>
-        <div>
-          <Button
-            type="primary"
-            danger
-            onClick={() => {
-              // Handle the delete action here
-            }}
-          >
-            Delete boat
-          </Button>
-        </div>
+        <SectionHeader
+          title={translate('settings.common.dangerZone.title')}
+          subtitle={translate('settings.common.dangerZone.description')}
+        />
+        <Button
+          type="primary"
+          danger
+          onClick={() => {
+            // Handle the delete action here
+          }}
+        >
+          Delete boat
+        </Button>
       </section>
     </SettingsLayout>
   );
