@@ -166,7 +166,8 @@
     "list": {
       "title": "Liste des équipements",
       "subtitle": "Gérez les équipements de votre bateau",
-      "add": "Ajouter un équipement"
+      "add": "Ajouter un équipement",
+      "empty": "Aucun équipement trouvé"
     },
     "add": {
       "title": "Ajouter un équipement"

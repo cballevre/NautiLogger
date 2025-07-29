@@ -166,7 +166,8 @@
     "list": {
       "title": "Equipment List",
       "subtitle": "Manage your boat's equipment",
-      "add": "Add Equipment"
+      "add": "Add Equipment",
+      "empty": "No equipment found"
     },
     "add": {
       "title": "Add an equipment"
