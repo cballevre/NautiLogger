@@ -1,4 +1,4 @@
-import { Link, useList, useTranslation } from '@refinedev/core';
+import { Link, useInfiniteList, useTranslation } from '@refinedev/core';
 import { Button, Card, Empty, List } from 'antd';
 
 import { EquipmentActionsMenu } from '@/components/equipment-actions-menu.tsx';
@@ -11,23 +11,27 @@ import type { Equipment } from '@/models/equipment';
 
 const EquipmentList = () => {
   const { data: boat } = useCurrentBoat();
-  const { data: equipments } = useList<Equipment>({
+  const {
+    data: equipments,
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+  } = useInfiniteList<Equipment>({
     resource: 'equipments',
   });
   const { translate } = useTranslation();
 
   const groupedEquipments: Record<string, Equipment[]> =
-    equipments?.data.reduce(
-      (acc: Record<string, Equipment[]>, equipment: Equipment) => {
+    equipments?.pages
+      .flatMap((page) => page.data)
+      .reduce((acc: Record<string, Equipment[]>, equipment: Equipment) => {
         const system = equipment.system_key;
         if (!acc[system]) {
           acc[system] = [];
         }
         acc[system].push(equipment);
         return acc;
-      },
-      {},
-    ) || {};
+      }, {}) || {};
 
   const sortedSystems = boatSystemList.filter(
     (system) => groupedEquipments?.[system],
@@ -77,6 +81,21 @@ const EquipmentList = () => {
           </PageContent>
         </section>
       ))}
+      {hasNextPage ? (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '16px',
+          }}
+        >
+          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+            {isFetchingNextPage
+              ? translate('common.loading_more')
+              : translate('common.load_more')}
+          </Button>
+        </div>
+      ) : null}
     </div>
   );
 };

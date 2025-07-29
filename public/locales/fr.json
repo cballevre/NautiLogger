@@ -4,7 +4,9 @@
     "download": "Télécharger",
     "more": "Plus",
     "edit": "Modifier",
-    "cancel": "Annuler"
+    "cancel": "Annuler",
+    "loading_more": "Chargement en cours...",
+    "load_more": "Afficher plus"
   },
   "pages": {
     "login": {

@@ -4,7 +4,9 @@
     "download": "Download",
     "more": "More",
     "edit": "Edit",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "loading_more": "Loading more...",
+    "load_more": "Load More"
   },
   "pages": {
     "login": {
