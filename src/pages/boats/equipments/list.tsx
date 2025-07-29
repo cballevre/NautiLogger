@@ -1,6 +1,7 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
-import { Button, List, Typography } from 'antd';
+import { Button, List } from 'antd';
 
+import { EquipmentActionsMenu } from '@/components/equipment-actions-menu.tsx';
 import { PageContent } from '@/components/page-content.tsx';
 import { PageHeader } from '@/components/page-header.tsx';
 import { SectionHeader } from '@/components/section-header.tsx';
@@ -64,6 +65,7 @@ const EquipmentList = () => {
                     }
                     description={equipment.description}
                   />
+                  <EquipmentActionsMenu equipment={equipment} />
                 </List.Item>
               )}
             />
