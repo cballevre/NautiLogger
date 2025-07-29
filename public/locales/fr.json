@@ -1,7 +1,10 @@
 {
   "common": {
     "delete": "Supprimer",
-    "download": "Télécharger"
+    "download": "Télécharger",
+    "more": "Plus",
+    "edit": "Modifier",
+    "cancel": "Annuler"
   },
   "pages": {
     "login": {
@@ -174,6 +177,10 @@
     },
     "edit": {
       "title": "Modifier l'équipement"
+    },
+    "delete": {
+      "confirmTitle": "Confirmer la suppression",
+      "confirmContent": "Voulez-vous vraiment supprimer cet équipement ?"
     },
     "form": {
       "labels": {

@@ -1,7 +1,10 @@
 {
   "common": {
     "delete": "Delete",
-    "download": "Download"
+    "download": "Download",
+    "more": "More",
+    "edit": "Edit",
+    "cancel": "Cancel"
   },
   "pages": {
     "login": {
@@ -174,6 +177,10 @@
     "show": {
       "title": "Equipment Details",
       "edit": "Edit Equipment"
+    },
+    "delete": {
+      "confirmTitle": "Confirm delete",
+      "confirmContent": "Do you really want to delete this equipment?"
     },
     "form": {
       "labels": {
