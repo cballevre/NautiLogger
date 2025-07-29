@@ -1,5 +1,5 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
-import { Button, List } from 'antd';
+import { Button, Card, Empty, List } from 'antd';
 
 import { EquipmentActionsMenu } from '@/components/equipment-actions-menu.tsx';
 import { PageContent } from '@/components/page-content.tsx';
@@ -44,6 +44,11 @@ const EquipmentList = () => {
           </Link>
         }
       />
+      {sortedSystems.length === 0 ? (
+        <Card>
+          <Empty description={translate('equipments.list.empty')} />
+        </Card>
+      ) : null}
       {sortedSystems.map((system) => (
         <section key={system}>
           <SectionHeader
