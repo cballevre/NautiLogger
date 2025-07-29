@@ -9,6 +9,13 @@ import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
 import { boatSystemList } from '@/models/boat-system';
 import type { Equipment } from '@/models/equipment';
 
+const getEquipmentSubtitle = (equipment: Equipment) => {
+  return (
+    (equipment.brand || equipment.model) &&
+    [equipment.brand, equipment.model].filter(Boolean).join(' - ')
+  );
+};
+
 const EquipmentList = () => {
   const { data: boat } = useCurrentBoat();
   const {
@@ -72,7 +79,7 @@ const EquipmentList = () => {
                         {equipment.name}
                       </Link>
                     }
-                    description={equipment.description}
+                    description={getEquipmentSubtitle(equipment)}
                   />
                   <EquipmentActionsMenu equipment={equipment} />
                 </List.Item>
