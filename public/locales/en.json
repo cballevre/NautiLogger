@@ -193,6 +193,10 @@
         "warranty_end_date": "Warranty End Date",
         "purchase_value": "Purchase Value",
         "purchase_date": "Purchase Date"
+      },
+      "validation": {
+        "name_required": "Equipment name is required.",
+        "system_required": "System is required."
       }
     },
     "attachments": {

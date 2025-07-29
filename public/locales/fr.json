@@ -193,6 +193,10 @@
         "warranty_end_date": "Fin de garantie",
         "purchase_value": "Valeur d'achat",
         "purchase_date": "Date d'achat"
+      },
+      "validation": {
+        "name_required": "Le nom de l'équipement est requis.",
+        "system_required": "Le système est requis."
       }
     },
     "attachments": {

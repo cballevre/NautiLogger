@@ -18,20 +18,29 @@ const EquipmentForm: FC<EquipmentFormProps> = ({
 
   return (
     <Form {...formProps} onFinish={handleOnFinish} layout="vertical">
-      <Form.Item label={translate('equipments.form.labels.name')} name="name">
+      <Form.Item
+        label={translate('equipments.form.labels.name')}
+        name="name"
+        rules={[
+          {
+            required: true,
+            message: translate('equipments.form.validation.name_required'),
+          },
+        ]}
+      >
         <Input />
       </Form.Item>
       <Form.Item
         label={translate('equipments.form.labels.system')}
         name="system_key"
+        rules={[
+          {
+            required: true,
+            message: translate('equipments.form.validation.system_required'),
+          },
+        ]}
       >
         <BoatSystemSelect />
-      </Form.Item>
-      <Form.Item
-        label={translate('equipments.form.labels.description')}
-        name="description"
-      >
-        <Input.TextArea rows={4} />
       </Form.Item>
       <Form.Item label={translate('equipments.form.labels.brand')} name="brand">
         <Input />
@@ -44,6 +53,12 @@ const EquipmentForm: FC<EquipmentFormProps> = ({
         name="serial_number"
       >
         <Input />
+      </Form.Item>
+      <Form.Item
+        label={translate('equipments.form.labels.description')}
+        name="description"
+      >
+        <Input.TextArea rows={4} />
       </Form.Item>
       <Form.Item
         label={translate('equipments.form.labels.warranty_end_date')}
