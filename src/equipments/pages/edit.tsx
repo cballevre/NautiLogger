@@ -2,7 +2,7 @@ import { Edit, useForm } from '@refinedev/antd';
 import { useTranslation } from '@refinedev/core';
 import { useParams } from 'react-router';
 
-import { EquipmentForm } from '@/components/equipment-form.tsx';
+import { EquipmentForm } from '@/equipments/components/equipment-form';
 
 interface Equipment {
   id: string;

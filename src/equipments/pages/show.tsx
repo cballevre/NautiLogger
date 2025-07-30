@@ -4,8 +4,8 @@ import dayjs from 'dayjs';
 import { useParams } from 'react-router';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
-import { EquipmentAttachment } from '@/components/equipment-attachment';
 import { PageHeader } from '@/components/page-header.tsx';
+import { EquipmentAttachment } from '@/equipments/components/equipment-attachment';
 
 const ShowEquipment = () => {
   const { data: boat } = useCurrentBoat();
