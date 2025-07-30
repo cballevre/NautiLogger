@@ -76,45 +76,30 @@
       "buttons": {
         "submit": "Mettre à jour"
       }
-    },
-    "dashboard": {
-      "title": "Tableau de bord"
     }
   },
-  "LogoutButton": {
-    "label": "Déconnexion"
-  },
-  "ListBoat": {
-    "title": "Vos bateaux",
-    "add": "Ajouter un nouveau bateau"
-  },
-  "AddBoat": {
-    "title": "Ajouter un nouveau bateau",
-    "labels": {
-      "name": "Nom"
-    }
-  },
-  "InterventionList": {
-    "title": "Liste des interventions",
-    "add": "Ajouter une intervention"
-  },
-  "AddIntervention": {
-    "title": "Ajouter une intervention",
-    "labels": {
-      "title": "Titre",
-      "date": "Date",
-      "description": "Description"
-    }
-  },
-  "InterventionShow": {
-    "edit": "Modifier l'intervention"
+  "auth": {
+    "logout": "Déconnexion"
   },
   "boats": {
+    "list": {
+      "title": "Vos bateaux",
+      "add": "Ajouter un nouveau bateau"
+    },
+    "add": {
+      "title": "Ajouter un nouveau bateau",
+      "labels": {
+        "name": "Nom"
+      }
+    },
     "menu": {
       "dashboard": "Tableau de bord",
       "interventions": "Interventions",
       "equipments": "Équipements",
       "settings": "Paramètres"
+    },
+    "dashboard": {
+      "title": "Tableau de bord"
     },
     "systems": {
       "select": {
@@ -174,12 +159,12 @@
     "add": {
       "title": "Ajouter un équipement"
     },
+    "edit": {
+      "title": "Modifier l'équipement"
+    },
     "show": {
       "title": "Détails de l'équipement",
       "edit": "Modifier l'équipement"
-    },
-    "edit": {
-      "title": "Modifier l'équipement"
     },
     "delete": {
       "confirmTitle": "Confirmer la suppression",
@@ -205,6 +190,28 @@
     "attachments": {
       "title": "Pièces jointes",
       "add": "Ajouter une pièce jointe"
+    }
+  },
+  "interventions": {
+    "list": {
+      "title": "Liste des interventions",
+      "add": "Ajouter une intervention"
+    },
+    "add": {
+      "title": "Ajouter une intervention"
+    },
+    "show": {
+      "edit": "Modifier l'intervention"
+    },
+    "edit": {
+      "title": "Editer l'intervention"
+    },
+    "form": {
+      "labels": {
+        "title": "Titre",
+        "date": "Date",
+        "description": "Description"
+      }
     }
   },
   "settings": {

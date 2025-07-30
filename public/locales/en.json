@@ -76,45 +76,30 @@
       "buttons": {
         "submit": "Update"
       }
-    },
-    "dashboard": {
-      "title": "Tableau de bord"
     }
   },
-  "LogoutButton": {
-    "label": "Logout"
-  },
-  "ListBoat": {
-    "title": "Your boats",
-    "add": "Create a new boat"
-  },
-  "AddBoat": {
-    "title": "Add a new boat",
-    "labels": {
-      "name": "Name"
-    }
-  },
-  "InterventionList": {
-    "title": "Intervention List",
-    "add": "Add an intervention"
-  },
-  "AddIntervention": {
-    "title": "Add an intervention",
-    "labels": {
-      "title": "Title",
-      "date": "Date",
-      "description": "Description"
-    }
-  },
-  "InterventionShow": {
-    "edit": "Edit Intervention"
+  "auth": {
+    "logout": "Logout"
   },
   "boats": {
+    "list": {
+      "title": "Your boats",
+      "add": "Create a new boat"
+    },
+    "add": {
+      "title": "Add a new boat",
+      "labels": {
+        "name": "Name"
+      }
+    },
     "menu": {
       "dashboard": "Dashboard",
       "interventions": "Interventions",
       "equipments": "Equipments",
       "settings": "Settings"
+    },
+    "dashboard": {
+      "title": "Dashboard"
     },
     "systems": {
       "select": {
@@ -205,6 +190,28 @@
     "attachments": {
       "title": "Attachments",
       "add": "Add an attachment"
+    }
+  },
+  "interventions": {
+    "list": {
+      "title": "Intervention List",
+      "add": "Add an intervention"
+    },
+    "add": {
+      "title": "Add an intervention"
+    },
+    "show": {
+      "edit": "Edit Intervention"
+    },
+    "edit": {
+      "title": "Edit Intervention"
+    },
+    "form": {
+      "labels": {
+        "title": "Title",
+        "date": "Date",
+        "description": "Description"
+      }
     }
   },
   "settings": {

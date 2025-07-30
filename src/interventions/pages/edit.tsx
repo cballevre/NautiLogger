@@ -1,4 +1,5 @@
 import { Edit, useForm } from '@refinedev/antd';
+import { useTranslate } from '@refinedev/core';
 import { useParams } from 'react-router';
 
 import { InterventionForm } from '@/interventions/components/intervention-form';
@@ -11,9 +12,13 @@ const EditIntervention = () => {
     action: 'edit',
     id: interventionId,
   });
+  const translate = useTranslate();
 
   return (
-    <Edit title="Edit Intervention" saveButtonProps={saveButtonProps}>
+    <Edit
+      title={translate('interventions.edit.title')}
+      saveButtonProps={saveButtonProps}
+    >
       <InterventionForm formProps={formProps} handleOnFinish={onFinish} />
     </Edit>
   );

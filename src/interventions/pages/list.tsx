@@ -16,10 +16,12 @@ const InterventionList = () => {
   return (
     <>
       <PageHeader
-        title={translate('InterventionList.title')}
+        title={translate('interventions.list.title')}
         actions={
           <Link to={`/boats/${boat?.data.id}/interventions/add`}>
-            <Button type="primary">{translate('InterventionList.add')}</Button>
+            <Button type="primary">
+              {translate('interventions.list.add')}
+            </Button>
           </Link>
         }
       />

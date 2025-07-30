@@ -27,7 +27,7 @@ const AddIntervention = () => {
   return (
     <Create
       saveButtonProps={saveButtonProps}
-      title={translate('AddIntervention.title')}
+      title={translate('interventions.add.title')}
     >
       <InterventionForm formProps={formProps} handleOnFinish={handleOnFinish} />
     </Create>

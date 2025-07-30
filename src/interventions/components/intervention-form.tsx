@@ -16,17 +16,20 @@ const InterventionForm: FC<InterventionFormProps> = ({
 
   return (
     <Form {...formProps} onFinish={handleOnFinish} layout="vertical">
-      <Form.Item label={translate('AddIntervention.labels.title')} name="title">
+      <Form.Item
+        label={translate('interventions.form.labels.title')}
+        name="title"
+      >
         <Input />
       </Form.Item>
       <Form.Item
-        label={translate('AddIntervention.labels.description')}
+        label={translate('interventions.form.labels.description')}
         name="description"
       >
         <Input />
       </Form.Item>
       <Form.Item
-        label={translate('AddIntervention.labels.date')}
+        label={translate('interventions.form.labels.date')}
         name="date"
         getValueProps={(value) => ({ value: value ? dayjs(value) : null })}
       >
