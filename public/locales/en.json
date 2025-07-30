@@ -88,8 +88,23 @@
     },
     "add": {
       "title": "Add a new boat",
-      "labels": {
-        "name": "Name"
+      "notification": {
+        "success": {
+          "message": "Your boat has been created.",
+          "description": "Success"
+        },
+        "error": {
+          "message": "There was an error while creating your boat.",
+          "description": "Error"
+        }
+      },
+      "form": {
+        "labels": {
+          "name": "Name"
+        },
+        "validation": {
+          "name_required": "Boat name is required."
+        }
       }
     },
     "menu": {
