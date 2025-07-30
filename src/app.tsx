@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { BrowserRouter } from 'react-router';
 
 import { AppRouter } from '@/app-router.tsx';
-import { authProvider } from '@/providers/auth-provider.ts';
+import { authProvider } from '@/auth/providers/auth-provider';
 import { supabaseClient } from '@/utils/supabaseClient.ts';
 
 function App() {

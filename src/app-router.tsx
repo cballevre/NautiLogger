@@ -2,6 +2,7 @@ import { AuthPage } from '@refinedev/antd';
 import { Authenticated } from '@refinedev/core';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 
+import { Login } from '@/auth/pages/login';
 import { BoatLayout } from '@/boats/components/boat-layout';
 import { AddBoat } from '@/boats/pages/add';
 import { BoatDashboard } from '@/boats/pages/dashboard';
@@ -9,7 +10,6 @@ import { ListBoat } from '@/boats/pages/list';
 import { AccessSettings } from '@/boats/pages/settings/access';
 import { CommonSettings } from '@/boats/pages/settings/common';
 import { Layout } from '@/components/layout.tsx';
-import { Login } from '@/pages/auth/login.tsx';
 import { AddEquipment } from '@/pages/boats/equipments/add.tsx';
 import { EditEquipment } from '@/pages/boats/equipments/edit.tsx';
 import { EquipmentList } from '@/pages/boats/equipments/list.tsx';
