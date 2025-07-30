@@ -3,8 +3,8 @@ import { Button, Typography } from 'antd';
 import { useParams } from 'react-router';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
-import { PageContent } from '@/components/page-content';
-import { PageHeader } from '@/components/page-header';
+import { PageContent } from '@/shared/components/page-content';
+import { PageHeader } from '@/shared/components/page-header';
 
 const ShowIntervention = () => {
   const { data: boat } = useCurrentBoat();

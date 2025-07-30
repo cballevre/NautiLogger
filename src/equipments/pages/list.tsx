@@ -3,11 +3,11 @@ import { Button, Card, Empty, List } from 'antd';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import { boatSystemList } from '@/boats/utils/boat-system';
-import { PageContent } from '@/components/page-content.tsx';
-import { PageHeader } from '@/components/page-header.tsx';
-import { SectionHeader } from '@/components/section-header.tsx';
 import { EquipmentActionsMenu } from '@/equipments/components/equipment-actions-menu';
 import type { Equipment } from '@/models/equipment';
+import { PageContent } from '@/shared/components/page-content';
+import { PageHeader } from '@/shared/components/page-header';
+import { SectionHeader } from '@/shared/components/section-header';
 
 const getEquipmentSubtitle = (equipment: Equipment) => {
   return (

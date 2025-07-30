@@ -2,7 +2,7 @@ import { Create, useForm } from '@refinedev/antd';
 import { useGetIdentity, useTranslation } from '@refinedev/core';
 import { Form, Input } from 'antd';
 
-import { PageLayout } from '@/components/page-layout';
+import { PageLayout } from '@/shared/components/page-layout';
 
 const AddBoat = () => {
   const { data: identity } = useGetIdentity<{ id: string }>();

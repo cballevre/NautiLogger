@@ -3,7 +3,7 @@ import type React from 'react';
 import type { ReactNode } from 'react';
 
 import { SettingsMenu } from '@/boats/components/settings-menu';
-import { PageHeader } from '@/components/page-header';
+import { PageHeader } from '@/shared/components/page-header';
 
 interface SettingsLayoutProps {
   children: ReactNode;

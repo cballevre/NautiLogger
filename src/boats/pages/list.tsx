@@ -2,8 +2,8 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Link, useList, useTranslation } from '@refinedev/core';
 import { Card, Col, Row } from 'antd';
 
-import { PageHeader } from '@/components/page-header';
-import { PageLayout } from '@/components/page-layout';
+import { PageHeader } from '@/shared/components/page-header';
+import { PageLayout } from '@/shared/components/page-layout';
 
 const ListBoat = () => {
   const { data: boats } = useList({

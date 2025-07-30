@@ -2,7 +2,7 @@ import { useTranslation } from '@refinedev/core';
 import { Button } from 'antd';
 
 import { SettingsLayout } from '@/boats/components/settings-layout';
-import { SectionHeader } from '@/components/section-header';
+import { SectionHeader } from '@/shared/components/section-header';
 
 const CommonSettings = () => {
   const { translate } = useTranslation();
