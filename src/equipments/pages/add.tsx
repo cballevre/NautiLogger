@@ -1,7 +1,7 @@
 import { Create, useForm } from '@refinedev/antd';
 import { useGo, useTranslation } from '@refinedev/core';
 
-import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { EquipmentForm } from '@/equipments/components/equipment-form';
 
 interface EquipmentFormValues {

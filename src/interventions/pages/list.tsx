@@ -1,7 +1,7 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
 import { Button, List } from 'antd';
 
-import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { PageContent } from '@/shared/components/page-content';
 import { PageHeader } from '@/shared/components/page-header';
 

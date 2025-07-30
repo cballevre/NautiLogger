@@ -3,7 +3,7 @@ import { Button, Card, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { useParams } from 'react-router';
 
-import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { EquipmentAttachment } from '@/equipments/components/equipment-attachment';
 import { PageHeader } from '@/shared/components/page-header';
 

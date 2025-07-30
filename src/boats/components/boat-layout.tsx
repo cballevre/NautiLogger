@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router';
 
-import { BoatMenu } from '@/boats/components/boat-menu.tsx';
+import { BoatMenu } from '@/boats/components/boat-menu';
 import { PageLayout } from '@/shared/components/page-layout';
 
 const BoatLayout = () => {

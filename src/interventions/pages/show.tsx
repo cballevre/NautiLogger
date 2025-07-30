@@ -2,7 +2,7 @@ import { Link, useOne, useTranslation } from '@refinedev/core';
 import { Button, Typography } from 'antd';
 import { useParams } from 'react-router';
 
-import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { PageContent } from '@/shared/components/page-content';
 import { PageHeader } from '@/shared/components/page-header';
 
