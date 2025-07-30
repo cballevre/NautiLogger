@@ -2,11 +2,14 @@ import { AuthPage } from '@refinedev/antd';
 import { Authenticated } from '@refinedev/core';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 
-import { BoatLayout } from '@/components/boat-layout';
+import { BoatLayout } from '@/boats/components/boat-layout';
+import { AddBoat } from '@/boats/pages/add';
+import { BoatDashboard } from '@/boats/pages/dashboard';
+import { ListBoat } from '@/boats/pages/list';
+import { AccessSettings } from '@/boats/pages/settings/access';
+import { CommonSettings } from '@/boats/pages/settings/common';
 import { Layout } from '@/components/layout.tsx';
 import { Login } from '@/pages/auth/login.tsx';
-import { AddBoat } from '@/pages/boats/add.tsx';
-import { BoatDashboard } from '@/pages/boats/dashboard.tsx';
 import { AddEquipment } from '@/pages/boats/equipments/add.tsx';
 import { EditEquipment } from '@/pages/boats/equipments/edit.tsx';
 import { EquipmentList } from '@/pages/boats/equipments/list.tsx';
@@ -15,9 +18,6 @@ import { AddIntervention } from '@/pages/boats/interventions/add.tsx';
 import { EditIntervention } from '@/pages/boats/interventions/edit';
 import { InterventionList } from '@/pages/boats/interventions/list.tsx';
 import { ShowIntervention } from '@/pages/boats/interventions/show.tsx';
-import { ListBoat } from '@/pages/boats/list.tsx';
-import { AccessSettings } from '@/pages/boats/settings/access.tsx';
-import { CommonSettings } from '@/pages/boats/settings/common';
 
 const AppRouter = () => {
   return (

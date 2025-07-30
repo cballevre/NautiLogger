@@ -1,12 +1,12 @@
 import { Link, useInfiniteList, useTranslation } from '@refinedev/core';
 import { Button, Card, Empty, List } from 'antd';
 
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
+import { boatSystemList } from '@/boats/utils/boat-system';
 import { EquipmentActionsMenu } from '@/components/equipment-actions-menu.tsx';
 import { PageContent } from '@/components/page-content.tsx';
 import { PageHeader } from '@/components/page-header.tsx';
 import { SectionHeader } from '@/components/section-header.tsx';
-import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
-import { boatSystemList } from '@/models/boat-system';
 import type { Equipment } from '@/models/equipment';
 
 const getEquipmentSubtitle = (equipment: Equipment) => {

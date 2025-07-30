@@ -16,7 +16,7 @@ import {
 } from 'antd';
 import type { FC } from 'react';
 
-import { useCurrentBoat } from '@/hooks/use-current-boat';
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import { supabaseClient as supabase } from '@/utils/supabaseClient';
 
 type Attachment = {
