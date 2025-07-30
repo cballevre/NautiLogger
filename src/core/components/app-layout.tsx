@@ -13,7 +13,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const AppLayout: FC<LayoutProps> = ({ children }) => {
   const screens = useBreakpoint();
 
   return (
@@ -45,4 +45,4 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export { Layout };
+export { AppLayout };
