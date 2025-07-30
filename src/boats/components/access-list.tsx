@@ -4,17 +4,14 @@ import { useState } from 'react';
 
 import { AddAccess } from './add-access';
 
-interface IAccesses {
-  id: string;
-  user_id: string;
-}
+import type { Access } from '@/shared/types/models';
 
 const AccessList = () => {
   const {
     data: accesses,
     isLoading,
     isError,
-  } = useList<IAccesses, HttpError>({
+  } = useList<Access, HttpError>({
     resource: 'accesses',
   });
 

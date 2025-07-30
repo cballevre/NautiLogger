@@ -3,17 +3,12 @@ import { useTranslation } from '@refinedev/core';
 import { useParams } from 'react-router';
 
 import { EquipmentForm } from '@/equipments/components/equipment-form';
-
-interface Equipment {
-  id: string;
-  title: string;
-  description: string;
-}
+import type { UpdateEquipment } from '@/shared/types/models';
 
 const EditEquipment = () => {
   const { equipmentId } = useParams<{ equipmentId: string }>();
   const { translate } = useTranslation();
-  const { formProps, saveButtonProps, onFinish } = useForm<Equipment>({
+  const { formProps, saveButtonProps, onFinish } = useForm<UpdateEquipment>({
     resource: 'equipments',
     action: 'edit',
     id: equipmentId,

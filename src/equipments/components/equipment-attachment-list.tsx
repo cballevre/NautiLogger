@@ -18,28 +18,24 @@ import type { FC } from 'react';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { supabaseClient as supabase } from '@/core/utils/supabaseClient';
+import type { EquipmentAttachment } from '@/shared/types/models';
 
-type Attachment = {
-  id: string;
-  file_name: string;
-  file_path: string;
-  uploaded_at: string;
-};
-
-type EquipmentAttachmentProps = {
+type EquipmentAttachmentListProps = {
   equipmentId?: string;
 };
 
-const EquipmentAttachment: FC<EquipmentAttachmentProps> = ({ equipmentId }) => {
+const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
+  equipmentId,
+}) => {
   const { translate } = useTranslation();
   const { data: boat } = useCurrentBoat();
 
-  const { data: attachments } = useList<Attachment>({
+  const { data: attachments } = useList<EquipmentAttachment>({
     resource: 'equipment_attachments',
     filters: [{ field: 'equipment_id', operator: 'eq', value: equipmentId }],
   });
 
-  const { mutate: createAttachment } = useCreate<Attachment>({
+  const { mutate: createAttachment } = useCreate({
     resource: 'equipment_attachments',
   });
 
@@ -62,7 +58,7 @@ const EquipmentAttachment: FC<EquipmentAttachmentProps> = ({ equipmentId }) => {
         });
 
       if (uploadError) {
-        throw new Error('Error uploading file: ' + uploadError.message);
+        throw new Error(`Error uploading file: ${uploadError.message}`);
       }
 
       createAttachment({
@@ -80,13 +76,13 @@ const EquipmentAttachment: FC<EquipmentAttachmentProps> = ({ equipmentId }) => {
     }
   };
 
-  const onDownload = async (attachment: Attachment) => {
+  const onDownload = async (attachment: EquipmentAttachment) => {
     const { data, error } = await supabase.storage
       .from('boat_attachments')
       .createSignedUrl(attachment.file_path, 3600);
 
     if (error) {
-      console.error('Error creating signed URL:', error.message);
+      console.error(`Error creating signed URL: ${error.message}`);
       return;
     }
 
@@ -102,7 +98,7 @@ const EquipmentAttachment: FC<EquipmentAttachmentProps> = ({ equipmentId }) => {
     }
   };
 
-  const onDelete = async (attachment: Attachment) => {
+  const onDelete = async (attachment: EquipmentAttachment) => {
     try {
       await supabase.storage
         .from('boat_attachments')
@@ -166,4 +162,4 @@ const EquipmentAttachment: FC<EquipmentAttachmentProps> = ({ equipmentId }) => {
   );
 };
 
-export { EquipmentAttachment };
+export { EquipmentAttachmentList };

@@ -3,6 +3,7 @@ import { useGo, useTranslation } from '@refinedev/core';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { EquipmentForm } from '@/equipments/components/equipment-form';
+import type { InsertEquipment } from '@/shared/types/models';
 
 interface EquipmentFormValues {
   [key: string]: any;
@@ -13,7 +14,7 @@ const AddEquipment = () => {
   const { translate } = useTranslation();
   const go = useGo();
 
-  const { formProps, saveButtonProps, onFinish } = useForm({
+  const { formProps, saveButtonProps, onFinish } = useForm<InsertEquipment>({
     resource: 'equipments',
     action: 'create',
     redirect: false,

@@ -4,7 +4,7 @@ import { Button, Dropdown, type MenuProps, Modal } from 'antd';
 import type { FC } from 'react';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
-import type { Equipment } from '@/models/equipment';
+import type { Equipment } from '@/shared/types/models';
 
 interface EquipmentActionsMenuProps {
   equipment: Equipment;
