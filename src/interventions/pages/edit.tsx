@@ -1,7 +1,7 @@
 import { Edit, useForm } from '@refinedev/antd';
 import { useParams } from 'react-router';
 
-import { InterventionForm } from '@/components/intervention-form';
+import { InterventionForm } from '@/interventions/components/intervention-form';
 
 interface Intervention {
   id: string;

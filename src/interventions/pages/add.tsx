@@ -2,7 +2,7 @@ import { Create, useForm } from '@refinedev/antd';
 import { useTranslation } from '@refinedev/core';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
-import { InterventionForm } from '@/components/intervention-form';
+import { InterventionForm } from '@/interventions/components/intervention-form';
 
 interface InterventionFormValues {
   [key: string]: any;
