@@ -217,6 +217,16 @@
       "dangerZone": {
         "title": "Danger Zone",
         "description": "Danger zone Be wary of the following features as they cannot be undone."
+      },
+      "deleteBoat": {
+        "button": "Delete boat",
+        "modalTitle": "Confirm deletion",
+        "modalText": "To confirm deletion, please type the name of the boat:",
+        "inputPlaceholder": "Boat name",
+        "okText": "Delete",
+        "cancelText": "Cancel",
+        "success": "Boat deleted",
+        "error": "Error while deleting"
       }
     },
     "access": {
