@@ -14,10 +14,10 @@ import { AddEquipment } from '@/equipments/pages/add';
 import { EditEquipment } from '@/equipments/pages/edit';
 import { EquipmentList } from '@/equipments/pages/list';
 import { ShowEquipment } from '@/equipments/pages/show';
-import { AddIntervention } from '@/pages/boats/interventions/add.tsx';
-import { EditIntervention } from '@/pages/boats/interventions/edit';
-import { InterventionList } from '@/pages/boats/interventions/list.tsx';
-import { ShowIntervention } from '@/pages/boats/interventions/show.tsx';
+import { AddIntervention } from '@/interventions/pages/add';
+import { EditIntervention } from '@/interventions/pages/edit';
+import { InterventionList } from '@/interventions/pages/list';
+import { ShowIntervention } from '@/interventions/pages/show';
 
 const AppRouter = () => {
   return (
