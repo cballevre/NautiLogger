@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router';
 
 import { AppRouter } from '@/app-router.tsx';
 import { authProvider } from '@/auth/providers/auth-provider';
-import { supabaseClient } from '@/utils/supabaseClient.ts';
+import { supabaseClient } from '@/core/utils/supabaseClient';
 
 function App() {
   const { t, i18n } = useTranslation();

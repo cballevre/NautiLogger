@@ -17,7 +17,7 @@ import {
 import type { FC } from 'react';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
-import { supabaseClient as supabase } from '@/utils/supabaseClient';
+import { supabaseClient as supabase } from '@/core/utils/supabaseClient';
 
 type Attachment = {
   id: string;

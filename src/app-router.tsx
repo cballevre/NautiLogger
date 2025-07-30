@@ -9,7 +9,7 @@ import { BoatDashboard } from '@/boats/pages/dashboard';
 import { ListBoat } from '@/boats/pages/list';
 import { AccessSettings } from '@/boats/pages/settings/access';
 import { CommonSettings } from '@/boats/pages/settings/common';
-import { Layout } from '@/components/layout.tsx';
+import { Layout } from '@/core/components/layout';
 import { AddEquipment } from '@/equipments/pages/add';
 import { EditEquipment } from '@/equipments/pages/edit';
 import { EquipmentList } from '@/equipments/pages/list';
