@@ -24,7 +24,9 @@ const ShowIntervention = () => {
           <Link
             to={`/boats/${boat?.data.id}/interventions/${interventionId}/edit`}
           >
-            <Button type="primary">{translate('InterventionShow.edit')}</Button>
+            <Button type="primary">
+              {translate('interventions.show.edit')}
+            </Button>
           </Link>
         }
       />

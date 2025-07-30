@@ -14,7 +14,7 @@ const ListBoat = () => {
 
   return (
     <PageLayout>
-      <PageHeader title={translate('ListBoat.title')} />
+      <PageHeader title={translate('boats.dashboard.title')} />
       <Row gutter={[16, 16]}>
         {boats?.data?.map((boat) => (
           <Col xs={24} sm={12} md={6} key={boat.id}>
