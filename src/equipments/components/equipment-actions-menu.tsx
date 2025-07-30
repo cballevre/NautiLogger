@@ -1,5 +1,5 @@
 import { DeleteOutlined, EditOutlined, MoreOutlined } from '@ant-design/icons';
-import { useDelete, useGo, useTranslation } from '@refinedev/core';
+import { useDelete, useGo, useTranslate } from '@refinedev/core';
 import { Button, Dropdown, type MenuProps, Modal } from 'antd';
 import type { FC } from 'react';
 
@@ -13,7 +13,7 @@ interface EquipmentActionsMenuProps {
 export const EquipmentActionsMenu: FC<EquipmentActionsMenuProps> = ({
   equipment,
 }) => {
-  const { translate } = useTranslation();
+  const translate = useTranslate();
   const { data: boat } = useCurrentBoat();
   const go = useGo();
 

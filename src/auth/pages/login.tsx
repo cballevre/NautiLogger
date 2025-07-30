@@ -1,9 +1,9 @@
 import { GoogleOutlined } from '@ant-design/icons';
 import { AuthPage } from '@refinedev/antd';
-import { useTranslation } from '@refinedev/core';
+import { useTranslate } from '@refinedev/core';
 
 const Login = () => {
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <AuthPage

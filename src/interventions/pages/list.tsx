@@ -1,4 +1,4 @@
-import { Link, useList, useTranslation } from '@refinedev/core';
+import { Link, useList, useTranslate } from '@refinedev/core';
 import { Button, List } from 'antd';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
@@ -11,7 +11,7 @@ const InterventionList = () => {
     resource: 'interventions',
   });
 
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <>

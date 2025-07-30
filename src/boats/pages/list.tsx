@@ -1,5 +1,5 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Link, useList, useTranslation } from '@refinedev/core';
+import { Link, useList, useTranslate } from '@refinedev/core';
 import { Card, Col, Row } from 'antd';
 
 import { PageHeader } from '@/shared/components/page-header';
@@ -10,7 +10,7 @@ const ListBoat = () => {
     resource: 'boats',
   });
 
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <PageLayout>

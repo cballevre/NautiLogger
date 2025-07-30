@@ -1,4 +1,4 @@
-import { useDelete, useGo, useTranslation } from '@refinedev/core';
+import { useDelete, useGo, useTranslate } from '@refinedev/core';
 import { Button, Input, Modal, Typography } from 'antd';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ export const BoatDeleteButton = () => {
   const [inputName, setInputName] = useState('');
   const { mutate, isLoading } = useDelete({});
   const go = useGo();
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   const showModal = () => setVisible(true);
   const handleCancel = () => {

@@ -3,7 +3,7 @@ import {
   DownloadOutlined,
   PaperClipOutlined,
 } from '@ant-design/icons';
-import { useCreate, useDelete, useList, useTranslation } from '@refinedev/core';
+import { useCreate, useDelete, useList, useTranslate } from '@refinedev/core';
 import {
   Button,
   Card,
@@ -27,7 +27,7 @@ type EquipmentAttachmentListProps = {
 const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
   equipmentId,
 }) => {
-  const { translate } = useTranslation();
+  const translate = useTranslate();
   const { data: boat } = useCurrentBoat();
 
   const { data: attachments } = useList<EquipmentAttachment>({

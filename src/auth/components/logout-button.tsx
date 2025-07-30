@@ -1,4 +1,4 @@
-import { useLogout, useTranslation } from '@refinedev/core';
+import { useLogout, useTranslate } from '@refinedev/core';
 import type { FC } from 'react';
 
 interface LogoutButtonProps {
@@ -8,7 +8,7 @@ interface LogoutButtonProps {
 export const LogoutButton: FC<LogoutButtonProps> = ({ style }) => {
   const { mutate: logout } = useLogout();
 
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <button type="button" style={style} onClick={() => logout()}>

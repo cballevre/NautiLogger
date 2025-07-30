@@ -1,4 +1,4 @@
-import { Link, useOne, useTranslation } from '@refinedev/core';
+import { Link, useOne, useTranslate } from '@refinedev/core';
 import { Button, Typography } from 'antd';
 import { useParams } from 'react-router';
 
@@ -14,7 +14,7 @@ const ShowIntervention = () => {
     id: interventionId as string,
   });
 
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <>
