@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { useParams } from 'react-router';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
-import { EquipmentAttachment } from '@/equipments/components/equipment-attachment';
+import { EquipmentAttachmentList } from '@/equipments/components/equipment-attachment-list';
 import { PageHeader } from '@/shared/components/page-header';
 
 const ShowEquipment = () => {
@@ -88,7 +88,7 @@ const ShowEquipment = () => {
           </Typography.Paragraph>
         ) : null}
       </Card>
-      <EquipmentAttachment equipmentId={equipmentId} />
+      <EquipmentAttachmentList equipmentId={equipmentId} />
     </>
   );
 };
