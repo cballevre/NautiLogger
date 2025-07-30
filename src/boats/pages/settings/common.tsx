@@ -1,6 +1,6 @@
 import { useTranslation } from '@refinedev/core';
-import { Button } from 'antd';
 
+import { BoatDeleteButton } from '@/boats/components/boat-delete-button';
 import { SettingsLayout } from '@/boats/components/settings-layout';
 import { SectionHeader } from '@/shared/components/section-header';
 
@@ -14,15 +14,7 @@ const CommonSettings = () => {
           title={translate('settings.common.dangerZone.title')}
           subtitle={translate('settings.common.dangerZone.description')}
         />
-        <Button
-          type="primary"
-          danger
-          onClick={() => {
-            // Handle the delete action here
-          }}
-        >
-          Delete boat
-        </Button>
+        <BoatDeleteButton />
       </section>
     </SettingsLayout>
   );

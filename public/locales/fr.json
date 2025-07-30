@@ -217,6 +217,16 @@
       "dangerZone": {
         "title": "Zone de danger",
         "description": "Zone de danger : Faites attention aux fonctionnalités suivantes car elles sont irréversibles."
+      },
+      "deleteBoat": {
+        "button": "Supprimer le bateau",
+        "modalTitle": "Confirmer la suppression",
+        "modalText": "Pour confirmer la suppression, veuillez saisir le nom du bateau :",
+        "inputPlaceholder": "Nom du bateau",
+        "okText": "Supprimer",
+        "cancelText": "Annuler",
+        "success": "Bateau supprimé",
+        "error": "Erreur lors de la suppression"
       }
     },
     "access": {
