@@ -214,6 +214,12 @@
     },
     "common": {
       "title": "Paramètres généraux",
+      "rename": {
+        "label": "Nom du bateau",
+        "save": "Renommer",
+        "success": "Nom du bateau mis à jour avec succès.",
+        "error": "Erreur lors de la mise à jour du nom du bateau."
+      },
       "dangerZone": {
         "title": "Zone de danger",
         "description": "Zone de danger : Faites attention aux fonctionnalités suivantes car elles sont irréversibles."
