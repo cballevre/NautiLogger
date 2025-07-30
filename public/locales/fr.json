@@ -88,8 +88,23 @@
     },
     "add": {
       "title": "Ajouter un nouveau bateau",
-      "labels": {
-        "name": "Nom"
+      "notification": {
+        "success": {
+          "description": "Succès",
+          "message": "Votre bateau a été créé avec succès."
+        },
+        "error": {
+          "description": "Une erreur est survenue lors de la création de votre bateau.",
+          "message": "Erreur"
+        }
+      },
+      "form": {
+        "labels": {
+          "name": "Nom"
+        },
+        "validation": {
+          "name_required": "Le nom du bateau est requis."
+        }
       }
     },
     "menu": {
