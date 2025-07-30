@@ -1,3 +1,4 @@
+import { useNotificationProvider } from '@refinedev/antd';
 import { Refine } from '@refinedev/core';
 import routerProvider from '@refinedev/react-router';
 import { dataProvider } from '@refinedev/supabase';
@@ -27,6 +28,7 @@ const AppProvider: FC<PropsWithChildren> = ({ children }) => {
             authProvider={authProvider}
             routerProvider={routerProvider}
             i18nProvider={i18nProvider}
+            notificationProvider={useNotificationProvider}
           >
             {children}
           </Refine>
