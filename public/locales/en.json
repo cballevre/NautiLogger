@@ -214,6 +214,12 @@
     },
     "common": {
       "title": "General Settings",
+      "rename": {
+        "label": "Boat name",
+        "save": "Rename",
+        "success": "Boat name updated successfully.",
+        "error": "Error updating boat name."
+      },
       "dangerZone": {
         "title": "Danger Zone",
         "description": "Danger zone Be wary of the following features as they cannot be undone."
