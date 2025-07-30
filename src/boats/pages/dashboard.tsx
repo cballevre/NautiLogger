@@ -1,6 +1,6 @@
 import { useTranslation } from '@refinedev/core';
 
-import { PageHeader } from '@/components/page-header.tsx';
+import { PageHeader } from '@/shared/components/page-header';
 
 const BoatDashboard = () => {
   const { translate } = useTranslation();

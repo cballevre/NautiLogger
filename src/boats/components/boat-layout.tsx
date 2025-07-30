@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 
 import { BoatMenu } from '@/boats/components/boat-menu.tsx';
-import { PageLayout } from '@/components/page-layout';
+import { PageLayout } from '@/shared/components/page-layout';
 
 const BoatLayout = () => {
   return (
