@@ -3,7 +3,7 @@ import type { MenuProps } from 'antd';
 import { Grid, Layout as LayoutAntd } from 'antd';
 import type { FC } from 'react';
 
-import { LogoutButton } from './logout-button';
+import { LogoutButton } from '@/auth/components/logout-button';
 
 const { Header, Content, Footer } = LayoutAntd;
 const { useBreakpoint } = Grid;
