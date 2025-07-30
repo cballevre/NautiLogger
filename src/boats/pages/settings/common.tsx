@@ -1,8 +1,8 @@
 import { useTranslation } from '@refinedev/core';
 import { Button } from 'antd';
 
+import { SettingsLayout } from '@/boats/components/settings-layout';
 import { SectionHeader } from '@/components/section-header';
-import { SettingsLayout } from '@/components/settings-layout';
 
 const CommonSettings = () => {
   const { translate } = useTranslation();

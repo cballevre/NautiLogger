@@ -3,7 +3,7 @@ import { useDelete, useGo, useTranslation } from '@refinedev/core';
 import { Button, Dropdown, type MenuProps, Modal } from 'antd';
 import type { FC } from 'react';
 
-import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import type { Equipment } from '@/models/equipment';
 
 interface EquipmentActionsMenuProps {

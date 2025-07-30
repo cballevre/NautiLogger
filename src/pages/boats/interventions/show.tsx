@@ -2,9 +2,9 @@ import { Link, useOne, useTranslation } from '@refinedev/core';
 import { Button, Typography } from 'antd';
 import { useParams } from 'react-router';
 
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import { PageContent } from '@/components/page-content';
 import { PageHeader } from '@/components/page-header';
-import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const ShowIntervention = () => {
   const { data: boat } = useCurrentBoat();

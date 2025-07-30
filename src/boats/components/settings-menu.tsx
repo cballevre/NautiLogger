@@ -2,7 +2,7 @@ import { useGo, useTranslation } from '@refinedev/core';
 import { Menu } from 'antd';
 import { useLocation } from 'react-router';
 
-import type { MenuItem } from '@/components/boat-menu';
+import type { MenuItem } from '@/boats/components/boat-menu';
 
 const items: MenuItem[] = [
   {

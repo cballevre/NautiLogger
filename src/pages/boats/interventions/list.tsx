@@ -1,9 +1,9 @@
 import { Link, useList, useTranslation } from '@refinedev/core';
 import { Button, List } from 'antd';
 
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import { PageContent } from '@/components/page-content';
 import { PageHeader } from '@/components/page-header';
-import { useCurrentBoat } from '@/hooks/use-current-boat';
 
 const InterventionList = () => {
   const { data: boat } = useCurrentBoat();

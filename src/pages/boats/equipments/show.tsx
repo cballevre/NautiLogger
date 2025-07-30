@@ -3,9 +3,9 @@ import { Button, Card, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { useParams } from 'react-router';
 
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import { EquipmentAttachment } from '@/components/equipment-attachment';
 import { PageHeader } from '@/components/page-header.tsx';
-import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
 
 const ShowEquipment = () => {
   const { data: boat } = useCurrentBoat();

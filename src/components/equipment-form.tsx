@@ -3,7 +3,7 @@ import { DatePicker, Form, Input, InputNumber } from 'antd';
 import dayjs from 'dayjs';
 import type { FC } from 'react';
 
-import { BoatSystemSelect } from '@/components/boat-system-select';
+import { BoatSystemSelect } from '@/boats/components/boat-system-select';
 
 interface EquipmentFormProps {
   formProps: any;

@@ -1,8 +1,8 @@
 import { Create, useForm } from '@refinedev/antd';
 import { useGo, useTranslation } from '@refinedev/core';
 
+import { useCurrentBoat } from '@/boats/hooks/use-current-boat.tsx';
 import { EquipmentForm } from '@/components/equipment-form.tsx';
-import { useCurrentBoat } from '@/hooks/use-current-boat.tsx';
 
 interface EquipmentFormValues {
   [key: string]: any;
