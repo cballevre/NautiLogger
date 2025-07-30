@@ -1,4 +1,4 @@
-import { Link, useInfiniteList, useTranslation } from '@refinedev/core';
+import { Link, useInfiniteList, useTranslate } from '@refinedev/core';
 import { Button, Card, Empty, List } from 'antd';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
@@ -26,7 +26,7 @@ const EquipmentList = () => {
   } = useInfiniteList<Equipment>({
     resource: 'equipments',
   });
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   const groupedEquipments: Record<string, Equipment[]> =
     equipments?.pages

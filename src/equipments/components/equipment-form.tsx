@@ -1,4 +1,4 @@
-import { useTranslation } from '@refinedev/core';
+import { useTranslate } from '@refinedev/core';
 import { DatePicker, Form, Input, InputNumber } from 'antd';
 import dayjs from 'dayjs';
 import type { FC } from 'react';
@@ -14,7 +14,7 @@ const EquipmentForm: FC<EquipmentFormProps> = ({
   formProps,
   handleOnFinish,
 }) => {
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <Form {...formProps} onFinish={handleOnFinish} layout="vertical">

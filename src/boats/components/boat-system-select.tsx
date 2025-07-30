@@ -1,4 +1,4 @@
-import { useTranslation } from '@refinedev/core';
+import { useTranslate } from '@refinedev/core';
 import { Select } from 'antd';
 import type { FC } from 'react';
 
@@ -11,7 +11,7 @@ interface BoatSystemSelectProps {
 }
 
 const BoatSystemSelect: FC<BoatSystemSelectProps> = ({ value, onChange }) => {
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   const options = boatSystemList.map((key) => ({
     value: key,

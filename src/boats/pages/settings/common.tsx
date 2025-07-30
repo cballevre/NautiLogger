@@ -1,4 +1,4 @@
-import { useTranslation, useUpdate } from '@refinedev/core';
+import { useTranslate, useUpdate } from '@refinedev/core';
 import { Button, Col, Form, Input, Row } from 'antd';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
@@ -9,7 +9,7 @@ import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { SectionHeader } from '@/shared/components/section-header';
 
 const CommonSettings = () => {
-  const { translate } = useTranslation();
+  const translate = useTranslate();
   const { boatId } = useParams();
   const { data, isLoading } = useCurrentBoat();
   const [name, setName] = useState('');

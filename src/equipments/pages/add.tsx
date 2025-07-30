@@ -1,5 +1,5 @@
 import { Create, useForm } from '@refinedev/antd';
-import { useGo, useTranslation } from '@refinedev/core';
+import { useGo, useTranslate } from '@refinedev/core';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { EquipmentForm } from '@/equipments/components/equipment-form';
@@ -11,7 +11,7 @@ interface EquipmentFormValues {
 
 const AddEquipment = () => {
   const { data: boat } = useCurrentBoat();
-  const { translate } = useTranslation();
+  const translate = useTranslate();
   const go = useGo();
 
   const { formProps, saveButtonProps, onFinish } = useForm<InsertEquipment>({

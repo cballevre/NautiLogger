@@ -1,5 +1,5 @@
 import { Edit, useForm } from '@refinedev/antd';
-import { useTranslation } from '@refinedev/core';
+import { useTranslate } from '@refinedev/core';
 import { useParams } from 'react-router';
 
 import { EquipmentForm } from '@/equipments/components/equipment-form';
@@ -7,7 +7,7 @@ import type { UpdateEquipment } from '@/shared/types/models';
 
 const EditEquipment = () => {
   const { equipmentId } = useParams<{ equipmentId: string }>();
-  const { translate } = useTranslation();
+  const translate = useTranslate();
   const { formProps, saveButtonProps, onFinish } = useForm<UpdateEquipment>({
     resource: 'equipments',
     action: 'edit',

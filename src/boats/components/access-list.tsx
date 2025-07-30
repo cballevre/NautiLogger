@@ -1,10 +1,9 @@
-import { type HttpError, useList, useTranslation } from '@refinedev/core';
+import { type HttpError, useList, useTranslate } from '@refinedev/core';
 import { Button, Empty, List } from 'antd';
 import { useState } from 'react';
 
-import { AddAccess } from './add-access';
-
 import type { Access } from '@/shared/types/models';
+import { AddAccess } from './add-access';
 
 const AccessList = () => {
   const {
@@ -15,7 +14,7 @@ const AccessList = () => {
     resource: 'accesses',
   });
 
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

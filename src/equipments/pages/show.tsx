@@ -1,4 +1,4 @@
-import { Link, useOne, useTranslation } from '@refinedev/core';
+import { Link, useOne, useTranslate } from '@refinedev/core';
 import { Button, Card, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { useParams } from 'react-router';
@@ -15,7 +15,7 @@ const ShowEquipment = () => {
     id: equipmentId,
   });
 
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   return (
     <>

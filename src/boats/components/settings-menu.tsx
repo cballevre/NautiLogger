@@ -1,4 +1,4 @@
-import { useGo, useTranslation } from '@refinedev/core';
+import { useGo, useTranslate } from '@refinedev/core';
 import { Menu } from 'antd';
 import { useLocation } from 'react-router';
 
@@ -16,7 +16,7 @@ const items: MenuItem[] = [
 const SettingsMenu = () => {
   const { pathname } = useLocation();
   const go = useGo();
-  const { translate } = useTranslation();
+  const translate = useTranslate();
 
   const keys = pathname.split('/').filter(Boolean);
 

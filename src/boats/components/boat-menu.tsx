@@ -1,4 +1,4 @@
-import { useGo, useTranslation } from '@refinedev/core';
+import { useGo, useTranslate } from '@refinedev/core';
 import type { MenuProps } from 'antd';
 import { Grid, Menu } from 'antd';
 import { useLocation } from 'react-router';
@@ -25,7 +25,7 @@ const { useBreakpoint } = Grid;
 const BoatMenu = () => {
   const { pathname } = useLocation();
   const go = useGo();
-  const { translate } = useTranslation();
+  const translate = useTranslate();
   const screens = useBreakpoint();
 
   const keys = pathname.split('/').filter(Boolean);
