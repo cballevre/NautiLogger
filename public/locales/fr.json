@@ -202,9 +202,11 @@
     }
   },
   "interventions": {
+    "single": "intervention",
     "list": {
-      "title": "Liste des interventions",
-      "add": "Ajouter une intervention"
+      "title": "Interventions",
+      "add": "Ajouter une intervention",
+      "subtitle": "Réalisée le {{date}}"
     },
     "add": {
       "title": "Ajouter une intervention"
