@@ -12,4 +12,6 @@ export type EquipmentAttachment = Tables<'equipment_attachments'>;
 
 export type Access = Tables<'accesses'>;
 
+export type Intervention = Tables<'interventions'>;
+export type InsertIntervention = TablesInsert<'interventions'>;
 export type UpdateIntervention = TablesUpdate<'interventions'>;
