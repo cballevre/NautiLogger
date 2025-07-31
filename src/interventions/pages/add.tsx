@@ -1,5 +1,5 @@
 import { Create, useForm } from '@refinedev/antd';
-import { useTranslate } from '@refinedev/core';
+import { useGo, useTranslate } from '@refinedev/core';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { InterventionForm } from '@/interventions/components/intervention-form';
@@ -11,16 +11,22 @@ interface InterventionFormValues {
 const AddIntervention = () => {
   const { data: boat } = useCurrentBoat();
   const translate = useTranslate();
+  const go = useGo();
 
   const { formProps, saveButtonProps, onFinish } = useForm({
     resource: 'interventions',
     action: 'create',
+    redirect: false,
   });
 
   const handleOnFinish = (values: InterventionFormValues) => {
     onFinish({
       boat_id: boat?.data.id,
       ...values,
+    });
+    go({
+      to: `/boats/${boat?.data.id}/interventions`,
+      type: 'replace',
     });
   };
 

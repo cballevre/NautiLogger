@@ -224,13 +224,17 @@
       "labels": {
         "title": "Titre",
         "date": "Date",
-        "description": "Description",
+        "description": "Notes",
         "cost_group": {
           "title": "Coûts",
           "labor": "Main d'œuvre",
           "supply": "Fournitures",
           "total": "Total"
         }
+      },
+      "validation": {
+        "title_required": "Le titre est requis.",
+        "date_required": "La date est requise."
       },
       "actions": {
         "breakdown_costs": "Détailler les coûts",
