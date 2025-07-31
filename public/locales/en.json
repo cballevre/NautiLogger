@@ -180,7 +180,8 @@
     },
     "show": {
       "title": "Equipment Details",
-      "edit": "Edit Equipment"
+      "edit": "Edit Equipment",
+      "back": "Back to equipments"
     },
     "form": {
       "labels": {

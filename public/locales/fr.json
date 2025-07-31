@@ -180,7 +180,8 @@
     },
     "show": {
       "title": "Détails de l'équipement",
-      "edit": "Modifier l'équipement"
+      "edit": "Modifier l'équipement",
+      "back": "Retour aux équipements"
     },
     "form": {
       "labels": {

@@ -26,6 +26,7 @@ const ShowEquipment = () => {
             <Button type="primary">{translate('equipments.show.edit')}</Button>
           </Link>
         }
+        back={translate('equipments.show.back')}
       />
       <Card>
         <Typography.Paragraph>
