@@ -165,6 +165,7 @@
     }
   },
   "equipments": {
+    "single": "equipment",
     "list": {
       "title": "Equipment List",
       "subtitle": "Manage your boat's equipment",
@@ -180,10 +181,6 @@
     "show": {
       "title": "Equipment Details",
       "edit": "Edit Equipment"
-    },
-    "delete": {
-      "confirmTitle": "Confirm delete",
-      "confirmContent": "Do you really want to delete this equipment?"
     },
     "form": {
       "labels": {
@@ -262,6 +259,16 @@
       "empty": {
         "description": "You haven't invited anyone yet",
         "action": "Add people"
+      }
+    }
+  },
+  "shared": {
+    "actions_menu": {
+      "delete": {
+        "confirm": {
+          "title": "Confirm delete",
+          "content": "Do you really want to delete this {{resource}}?"
+        }
       }
     }
   }
