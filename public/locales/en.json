@@ -212,7 +212,10 @@
     "show": {
       "title": "Intervention Details",
       "edit": "Edit Intervention",
-      "back": "Back to interventions"
+      "back": "Back to interventions",
+      "total_cost": "Total cost",
+      "labor_cost": "Labor",
+      "supply_cost": "Supplies"
     },
     "edit": {
       "title": "Edit Intervention"
@@ -221,7 +224,17 @@
       "labels": {
         "title": "Title",
         "date": "Date",
-        "description": "Description"
+        "description": "Description",
+        "cost_group": {
+          "title": "Costs",
+          "labor": "Labor",
+          "supply": "Supplies",
+          "total": "Total"
+        }
+      },
+      "actions": {
+        "breakdown_costs": "Break down costs",
+        "simplify_costs": "Simplify costs"
       }
     }
   },

@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { PageHeader } from '@/shared/components/page-header';
+import { getCostCalculationString } from '../utils/cost';
 
 const ShowIntervention = () => {
   const { data: boat } = useCurrentBoat();
@@ -42,6 +43,22 @@ const ShowIntervention = () => {
             </strong>
             {intervention.data.description}
           </Typography.Paragraph>
+        ) : null}
+        {intervention?.data.total_cost ? (
+          <>
+            <Typography.Paragraph style={{ marginBottom: 0 }}>
+              <strong>{translate('interventions.show.total_cost')}: </strong>
+              {intervention.data.total_cost} €
+            </Typography.Paragraph>
+            <Typography.Paragraph type="secondary">
+              {getCostCalculationString({
+                supplyCost: intervention.data.supply_cost,
+                laborCost: intervention.data.labor_cost,
+                totalCost: intervention.data.total_cost,
+                translate,
+              })}
+            </Typography.Paragraph>
+          </>
         ) : null}
       </Card>
     </>

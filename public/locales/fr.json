@@ -212,7 +212,10 @@
     "show": {
       "title": "Détails de l'intervention",
       "edit": "Modifier l'intervention",
-      "back": "Retour aux interventions"
+      "back": "Retour aux interventions",
+      "total_cost": "Coût total",
+      "labor_cost": "Main d'œuvre",
+      "supply_cost": "Fournitures"
     },
     "edit": {
       "title": "Editer l'intervention"
@@ -221,7 +224,17 @@
       "labels": {
         "title": "Titre",
         "date": "Date",
-        "description": "Description"
+        "description": "Description",
+        "cost_group": {
+          "title": "Coûts",
+          "labor": "Main d'œuvre",
+          "supply": "Fournitures",
+          "total": "Total"
+        }
+      },
+      "actions": {
+        "breakdown_costs": "Détailler les coûts",
+        "simplify_costs": "Simplifier les coûts"
       }
     }
   },
