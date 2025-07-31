@@ -14,7 +14,7 @@ const InterventionList = () => {
     useInfiniteList<Intervention>({
       resource: 'interventions',
       pagination: { pageSize: 50 },
-      sorters: [{ field: 'id', order: 'desc' }],
+      sorters: [{ field: 'date', order: 'desc' }],
     });
 
   const { getLocale, translate } = useTranslation();
