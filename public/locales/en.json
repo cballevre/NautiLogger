@@ -210,7 +210,9 @@
       "title": "Add an intervention"
     },
     "show": {
-      "edit": "Edit Intervention"
+      "title": "Intervention Details",
+      "edit": "Edit Intervention",
+      "back": "Back to interventions"
     },
     "edit": {
       "title": "Edit Intervention"
