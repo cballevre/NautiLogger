@@ -4,6 +4,9 @@ CREATE TABLE public.interventions (
   description text,
   title text NOT NULL,
   date timestamp with time zone NOT NULL,
+  total_cost numeric,
+  labor_cost numeric,
+  supply_cost numeric,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   constraint interventions_pkey primary key (id),
   constraint interventions_boat_id_fkey foreign key (boat_id) references public.boats(id)
