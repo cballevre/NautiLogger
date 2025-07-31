@@ -22,12 +22,12 @@ const InterventionForm: FC<InterventionFormProps> = ({
       <Form.Item
         label={translate('interventions.form.labels.title')}
         name="title"
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label={translate('interventions.form.labels.description')}
-        name="description"
+        rules={[
+          {
+            required: true,
+            message: translate('interventions.form.validation.title_required'),
+          },
+        ]}
       >
         <Input />
       </Form.Item>
@@ -35,9 +35,22 @@ const InterventionForm: FC<InterventionFormProps> = ({
         label={translate('interventions.form.labels.date')}
         name="date"
         getValueProps={(value) => ({ value: value ? dayjs(value) : null })}
+        rules={[
+          {
+            required: true,
+            message: translate('interventions.form.validation.date_required'),
+          },
+        ]}
       >
         <DatePicker />
       </Form.Item>
+      <Form.Item
+        label={translate('interventions.form.labels.description')}
+        name="description"
+      >
+        <Input.TextArea />
+      </Form.Item>
+
       <Form.Item
         label={translate('interventions.form.labels.cost_group.title')}
         style={{ marginBottom: 0 }}

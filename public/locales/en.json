@@ -224,13 +224,17 @@
       "labels": {
         "title": "Title",
         "date": "Date",
-        "description": "Description",
+        "description": "Notes",
         "cost_group": {
           "title": "Costs",
           "labor": "Labor",
           "supply": "Supplies",
           "total": "Total"
         }
+      },
+      "validation": {
+        "title_required": "Title is required.",
+        "date_required": "Date is required."
       },
       "actions": {
         "breakdown_costs": "Break down costs",
