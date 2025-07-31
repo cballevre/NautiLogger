@@ -3,6 +3,7 @@ import { Button, Card, Typography } from 'antd';
 import { useParams } from 'react-router';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
+import { AttachmentList } from '@/shared/components/attachment-list';
 import { PageHeader } from '@/shared/components/page-header';
 import { getCostCalculationString } from '../utils/cost';
 
@@ -61,6 +62,7 @@ const ShowIntervention = () => {
           </>
         ) : null}
       </Card>
+      <AttachmentList resource="intervention" resourceId={interventionId} />
     </>
   );
 };
