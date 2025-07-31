@@ -6,8 +6,8 @@ create table public.equipment_attachments (
   file_type text,
   description text,
   uploaded_at timestamp with time zone not null default now(),
-  constraint attachments_pkey primary key (id),
-  constraint attachments_equipment_id_fkey foreign key (equipment_id) references public.equipments(id) on delete cascade
+  constraint equipment_attachments_pkey primary key (id),
+  constraint equipment_attachments_equipment_id_fkey foreign key (equipment_id) references public.equipments(id) on delete cascade
 );
 
 alter table public.equipment_attachments enable row level security;
