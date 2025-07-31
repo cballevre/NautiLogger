@@ -4,39 +4,34 @@ import {
   PaperClipOutlined,
 } from '@ant-design/icons';
 import { useCreate, useDelete, useList, useTranslate } from '@refinedev/core';
-import {
-  Button,
-  Card,
-  Col,
-  List,
-  Row,
-  Typography,
-  Upload,
-  type UploadProps,
-} from 'antd';
+import { Button, Card, Col, List, Row, Upload, type UploadProps } from 'antd';
 import type { FC } from 'react';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { supabaseClient as supabase } from '@/core/utils/supabaseClient';
+import { SectionHeader } from '@/shared/components/section-header';
 import type { EquipmentAttachment } from '@/shared/types/models';
 
-type EquipmentAttachmentListProps = {
-  equipmentId?: string;
+export type AttachmentListProps = {
+  resource: string;
+  resourceId?: string;
 };
 
-const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
-  equipmentId,
-}) => {
+const AttachmentList: FC<AttachmentListProps> = ({ resource, resourceId }) => {
   const translate = useTranslate();
   const { data: boat } = useCurrentBoat();
 
+  const attachmentResource = `${resource}_attachments`;
+  const boatAttachmentBucket = 'boat_attachments';
+  const resourceForeignKey = `${resource}_id`;
+
   const { data: attachments } = useList<EquipmentAttachment>({
-    resource: 'equipment_attachments',
-    filters: [{ field: 'equipment_id', operator: 'eq', value: equipmentId }],
+    resource: attachmentResource,
+    filters: [{ field: resourceForeignKey, operator: 'eq', value: resourceId }],
   });
 
   const { mutate: createAttachment } = useCreate({
-    resource: 'equipment_attachments',
+    resource: attachmentResource,
   });
 
   const { mutate: deleteAttachment } = useDelete();
@@ -48,10 +43,10 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
   }) => {
     try {
       const uploadedFile = file as File;
-      const filePath = `${boat?.data?.id}/equipments/${equipmentId}/attachments/${Date.now()}_${uploadedFile.name}`;
+      const filePath = `${boat?.data?.id}/${resource}s/${resourceId}/attachments/${Date.now()}_${uploadedFile.name}`;
 
       const { error: uploadError } = await supabase.storage
-        .from('boat_attachments')
+        .from(boatAttachmentBucket)
         .upload(filePath, file, {
           upsert: false,
           contentType: uploadedFile.type,
@@ -63,7 +58,7 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
 
       createAttachment({
         values: {
-          equipment_id: equipmentId,
+          [resourceForeignKey]: resourceId,
           file_name: uploadedFile.name,
           file_path: filePath,
           file_type: uploadedFile.type,
@@ -78,7 +73,7 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
 
   const onDownload = async (attachment: EquipmentAttachment) => {
     const { data, error } = await supabase.storage
-      .from('boat_attachments')
+      .from(boatAttachmentBucket)
       .createSignedUrl(attachment.file_path, 3600);
 
     if (error) {
@@ -87,7 +82,6 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
     }
 
     if (data?.signedUrl) {
-      // Create a hidden link and trigger download in a new tab
       const link = document.createElement('a');
       link.href = data.signedUrl;
       link.target = '_blank';
@@ -101,11 +95,11 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
   const onDelete = async (attachment: EquipmentAttachment) => {
     try {
       await supabase.storage
-        .from('boat_attachments')
+        .from(boatAttachmentBucket)
         .remove([attachment.file_path]);
 
       await deleteAttachment({
-        resource: 'equipment_attachments',
+        resource: attachmentResource,
         id: attachment.id,
       });
     } catch (error) {
@@ -115,9 +109,7 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
 
   return (
     <section>
-      <Typography.Title level={2}>
-        {translate('equipments.attachments.title')}
-      </Typography.Title>
+      <SectionHeader title={translate('shared.attachments.title')} />
       <List
         grid={{ gutter: 8, column: 1 }}
         itemLayout="horizontal"
@@ -131,13 +123,12 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
                 </Col>
                 <Col flex="none">
                   <Button
-                    title={translate('common.download')}
+                    title={translate('shared.attachments.download')}
                     icon={<DownloadOutlined />}
                     onClick={() => onDownload(item)}
                   />
-
                   <Button
-                    title={translate('common.delete')}
+                    title={translate('shared.attachments.delete')}
                     icon={<DeleteOutlined />}
                     onClick={() => onDelete(item)}
                     style={{ marginLeft: '8px' }}
@@ -155,11 +146,11 @@ const EquipmentAttachmentList: FC<EquipmentAttachmentListProps> = ({
         customRequest={uploadToSupabase}
       >
         <Button type="link" icon={<PaperClipOutlined />}>
-          {translate('equipments.attachments.add')}
+          {translate('shared.attachments.add')}
         </Button>
       </Upload>
     </section>
   );
 };
 
-export { EquipmentAttachmentList };
+export { AttachmentList };

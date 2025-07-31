@@ -198,10 +198,6 @@
         "name_required": "Equipment name is required.",
         "system_required": "System is required."
       }
-    },
-    "attachments": {
-      "title": "Attachments",
-      "add": "Add an attachment"
     }
   },
   "interventions": {
@@ -263,6 +259,12 @@
     }
   },
   "shared": {
+    "attachments": {
+      "title": "Attachments",
+      "add": "Add an attachment",
+      "download": "Download",
+      "delete": "Delete"
+    },
     "actions_menu": {
       "delete": {
         "confirm": {
