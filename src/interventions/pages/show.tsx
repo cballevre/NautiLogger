@@ -1,9 +1,8 @@
 import { Link, useOne, useTranslate } from '@refinedev/core';
-import { Button, Typography } from 'antd';
+import { Button, Card, Typography } from 'antd';
 import { useParams } from 'react-router';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
-import { PageContent } from '@/shared/components/page-content';
 import { PageHeader } from '@/shared/components/page-header';
 
 const ShowIntervention = () => {
@@ -19,7 +18,7 @@ const ShowIntervention = () => {
   return (
     <>
       <PageHeader
-        title={intervention?.data.title}
+        title={translate('interventions.show.title')}
         actions={
           <Link
             to={`/boats/${boat?.data.id}/interventions/${interventionId}/edit`}
@@ -29,12 +28,22 @@ const ShowIntervention = () => {
             </Button>
           </Link>
         }
+        back={translate('interventions.show.back')}
       />
-      <PageContent>
+      <Card>
         <Typography.Paragraph>
-          {intervention?.data.description}
+          <strong>{translate('interventions.form.labels.title')}: </strong>
+          {intervention?.data.title}
         </Typography.Paragraph>
-      </PageContent>
+        {intervention?.data.description ? (
+          <Typography.Paragraph>
+            <strong>
+              {translate('interventions.form.labels.description')}:
+            </strong>
+            {intervention.data.description}
+          </Typography.Paragraph>
+        ) : null}
+      </Card>
     </>
   );
 };
