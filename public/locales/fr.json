@@ -165,6 +165,7 @@
     }
   },
   "equipments": {
+    "single": "équipement",
     "list": {
       "title": "Liste des équipements",
       "subtitle": "Gérez les équipements de votre bateau",
@@ -180,10 +181,6 @@
     "show": {
       "title": "Détails de l'équipement",
       "edit": "Modifier l'équipement"
-    },
-    "delete": {
-      "confirmTitle": "Confirmer la suppression",
-      "confirmContent": "Voulez-vous vraiment supprimer cet équipement ?"
     },
     "form": {
       "labels": {
@@ -262,6 +259,16 @@
       "empty": {
         "description": "Vous n'avez encore invité personne",
         "action": "Ajouter des personnes"
+      }
+    }
+  },
+  "shared": {
+    "actions_menu": {
+      "delete": {
+        "confirm": {
+          "title": "Confirmer la suppression",
+          "content": "Voulez-vous vraiment supprimer cet {{resource}} ?"
+        }
       }
     }
   }

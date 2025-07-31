@@ -4,14 +4,15 @@ import { Button, Dropdown, type MenuProps, Modal } from 'antd';
 import type { FC } from 'react';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
-import type { Equipment } from '@/shared/types/models';
 
-interface EquipmentActionsMenuProps {
-  equipment: Equipment;
+interface ResourceActionsMenuProps {
+  resource: string;
+  resourceId: string;
 }
 
-export const EquipmentActionsMenu: FC<EquipmentActionsMenuProps> = ({
-  equipment,
+const ResourceActionsMenu: FC<ResourceActionsMenuProps> = ({
+  resource,
+  resourceId,
 }) => {
   const translate = useTranslate();
   const { data: boat } = useCurrentBoat();
@@ -21,15 +22,17 @@ export const EquipmentActionsMenu: FC<EquipmentActionsMenuProps> = ({
 
   const handleDelete = () => {
     Modal.confirm({
-      title: translate('equipments.delete.confirmTitle'),
-      content: translate('equipments.delete.confirmContent'),
+      title: translate('shared.actions_menu.delete.confirm.title'),
+      content: translate('shared.actions_menu.delete.confirm.content', {
+        resource: translate(`${resource}.single`),
+      }),
       okText: translate('common.delete'),
       cancelText: translate('common.cancel'),
       okType: 'danger',
       onOk: () => {
         deleteEquipment({
-          resource: 'equipments',
-          id: equipment.id,
+          resource,
+          id: resourceId,
         });
       },
     });
@@ -38,7 +41,7 @@ export const EquipmentActionsMenu: FC<EquipmentActionsMenuProps> = ({
   const handleMenuClick: MenuProps['onClick'] = ({ key }) => {
     if (key === 'edit') {
       go({
-        to: `/boats/${boat?.data?.id}/equipments/${equipment.id}/edit`,
+        to: `/boats/${boat?.data?.id}/${resource}/${resourceId}/edit`,
       });
     } else if (key === 'delete') {
       handleDelete();
@@ -70,3 +73,5 @@ export const EquipmentActionsMenu: FC<EquipmentActionsMenuProps> = ({
     </Dropdown>
   );
 };
+
+export { ResourceActionsMenu };
