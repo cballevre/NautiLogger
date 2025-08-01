@@ -4,6 +4,7 @@ create table public.intervention_attachments (
   file_path text not null,
   file_name text not null,
   file_type text,
+  type text not null check (type in ('photo', 'document')) default 'document',
   description text,
   uploaded_at timestamp with time zone not null default now(),
   constraint intervention_attachments_pkey primary key (id),

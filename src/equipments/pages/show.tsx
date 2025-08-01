@@ -89,7 +89,16 @@ const ShowEquipment = () => {
           </Typography.Paragraph>
         ) : null}
       </Card>
-      <AttachmentList resource="equipment" resourceId={equipmentId} />
+      <AttachmentList
+        resource="equipment"
+        resourceId={equipmentId}
+        type="photo"
+      />
+      <AttachmentList
+        resource="equipment"
+        resourceId={equipmentId}
+        type="document"
+      />
     </>
   );
 };

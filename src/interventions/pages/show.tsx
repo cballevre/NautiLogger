@@ -62,7 +62,16 @@ const ShowIntervention = () => {
           </>
         ) : null}
       </Card>
-      <AttachmentList resource="intervention" resourceId={interventionId} />
+      <AttachmentList
+        resource="intervention"
+        resourceId={interventionId}
+        type="photo"
+      />
+      <AttachmentList
+        resource="intervention"
+        resourceId={interventionId}
+        type="document"
+      />
     </>
   );
 };

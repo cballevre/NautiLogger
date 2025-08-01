@@ -282,8 +282,16 @@
   },
   "shared": {
     "attachments": {
-      "title": "Attachments",
-      "add": "Add an attachment",
+      "photo": {
+        "title": "Photos",
+        "empty": "No photos found",
+        "add": "Add photo"
+      },
+      "document": {
+        "title": "Documents",
+        "empty": "No documents found",
+        "add": "Add document"
+      },
       "download": "Download",
       "delete": "Delete"
     },
