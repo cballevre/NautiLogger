@@ -20,6 +20,7 @@ import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
 import { supabaseClient as supabase } from '@/core/utils/supabaseClient';
 import { SectionHeader } from '@/shared/components/section-header';
 import type { EquipmentAttachment } from '@/shared/types/models';
+import { sanitizeFileName } from '@/shared/utils/sanitize-file-name';
 
 export type AttachmentListProps = {
   resource: 'intervention' | 'equipment';
@@ -60,7 +61,8 @@ const AttachmentList: FC<AttachmentListProps> = ({
   }) => {
     try {
       const uploadedFile = file as File;
-      const filePath = `${boat?.data?.id}/${resource}s/${resourceId}/attachments/${Date.now()}_${uploadedFile.name}`;
+      const safeName = sanitizeFileName(uploadedFile.name);
+      const filePath = `${boat?.data?.id}/${resource}s/${resourceId}/attachments/${Date.now()}_${safeName}`;
 
       const { error: uploadError } = await supabase.storage
         .from(boatAttachmentBucket)
