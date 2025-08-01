@@ -23,6 +23,14 @@ This document guides AI agents to contribute effectively to the VesselVigil proj
 - **I18n**: translation files in `public/locales/`.
 - **Authentication**: handled via Supabase and Refine, see `src/auth/providers/auth-provider.ts`.
 
+## Commit messages
+- Use the conventional commits format: `type(scope): Description`.
+- Types include: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+- Use the imperative mood in the description (e.g., `feat: Add new boat management feature`).
+- Include a short description of the change and, if necessary, a longer explanation in the body.
+- Example: `feat(boats): Add boat management page with list and add functionality`.
+- Always write in English
+
 ## React librairies
 - **Refine**: used for data management and UI components.
 - **Ant Design**: UI components library.
