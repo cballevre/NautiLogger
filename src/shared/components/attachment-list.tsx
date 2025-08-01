@@ -4,7 +4,16 @@ import {
   PaperClipOutlined,
 } from '@ant-design/icons';
 import { useCreate, useDelete, useList, useTranslate } from '@refinedev/core';
-import { Button, Card, Col, List, Row, Upload, type UploadProps } from 'antd';
+import {
+  Button,
+  Card,
+  Col,
+  Empty,
+  List,
+  Row,
+  Upload,
+  type UploadProps,
+} from 'antd';
 import type { FC } from 'react';
 
 import { useCurrentBoat } from '@/boats/hooks/use-current-boat';
@@ -13,11 +22,16 @@ import { SectionHeader } from '@/shared/components/section-header';
 import type { EquipmentAttachment } from '@/shared/types/models';
 
 export type AttachmentListProps = {
-  resource: string;
+  resource: 'intervention' | 'equipment';
   resourceId?: string;
+  type: 'photo' | 'document';
 };
 
-const AttachmentList: FC<AttachmentListProps> = ({ resource, resourceId }) => {
+const AttachmentList: FC<AttachmentListProps> = ({
+  resource,
+  resourceId,
+  type,
+}) => {
   const translate = useTranslate();
   const { data: boat } = useCurrentBoat();
 
@@ -27,7 +41,10 @@ const AttachmentList: FC<AttachmentListProps> = ({ resource, resourceId }) => {
 
   const { data: attachments } = useList<EquipmentAttachment>({
     resource: attachmentResource,
-    filters: [{ field: resourceForeignKey, operator: 'eq', value: resourceId }],
+    filters: [
+      { field: resourceForeignKey, operator: 'eq', value: resourceId },
+      { field: 'type', operator: 'eq', value: type },
+    ],
   });
 
   const { mutate: createAttachment } = useCreate({
@@ -62,6 +79,7 @@ const AttachmentList: FC<AttachmentListProps> = ({ resource, resourceId }) => {
           file_name: uploadedFile.name,
           file_path: filePath,
           file_type: uploadedFile.type,
+          type,
         },
       });
       onSuccess?.('File uploaded successfully!');
@@ -107,9 +125,31 @@ const AttachmentList: FC<AttachmentListProps> = ({ resource, resourceId }) => {
     }
   };
 
+  if (attachments?.data.length === 0) {
+    return (
+      <section>
+        <SectionHeader title={translate(`shared.attachments.${type}.title`)} />
+        <Card>
+          <Empty
+            image={Empty.PRESENTED_IMAGE_SIMPLE}
+            description={translate(`shared.attachments.${type}.empty`)}
+          >
+            <Upload
+              accept={type === 'photo' ? 'image/*' : 'application/pdf'}
+              showUploadList={false}
+              customRequest={uploadToSupabase}
+            >
+              <Button>{translate(`shared.attachments.${type}.add`)}</Button>
+            </Upload>
+          </Empty>
+        </Card>
+      </section>
+    );
+  }
+
   return (
     <section>
-      <SectionHeader title={translate('shared.attachments.title')} />
+      <SectionHeader title={translate(`shared.attachments.${type}.title`)} />
       <List
         grid={{ gutter: 8, column: 1 }}
         itemLayout="horizontal"
@@ -141,12 +181,12 @@ const AttachmentList: FC<AttachmentListProps> = ({ resource, resourceId }) => {
         )}
       />
       <Upload
-        accept="application/pdf"
+        accept={type === 'photo' ? 'image/*' : 'application/pdf'}
         showUploadList={false}
         customRequest={uploadToSupabase}
       >
         <Button type="link" icon={<PaperClipOutlined />}>
-          {translate('shared.attachments.add')}
+          {translate(`shared.attachments.${type}.add`)}
         </Button>
       </Upload>
     </section>
