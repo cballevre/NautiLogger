@@ -13,7 +13,8 @@
     "check": "biome check .",
     "preview": "vite preview",
     "seed:sync": "npx @snaplet/seed sync",
-    "seed:generate": "npx --yes tsx supabase/seeds/seed.ts > supabase/seeds/default.sql"
+    "seed:generate": "npx --yes tsx supabase/seeds/seed.ts > supabase/seeds/default.sql",
+    "types:generate": "supabase gen types typescript --local > src/shared/types/supabase.ts"
   },
   "dependencies": {
     "@ant-design/icons": "5.x",
@@ -43,7 +44,7 @@
     "@vitejs/plugin-react": "^4.5.2",
     "bcryptjs": "^3.0.2",
     "postgres": "^3.4.7",
-    "supabase": "^2.31.8",
+    "supabase": "^2.34.3",
     "typescript": "~5.8.3",
     "vite": "^7.0.0"
   },
