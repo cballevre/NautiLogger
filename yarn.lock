@@ -6112,10 +6112,10 @@ sunflower-antd@1.0.0-beta.3:
   resolved "https://registry.yarnpkg.com/sunflower-antd/-/sunflower-antd-1.0.0-beta.3.tgz#5e72feefc8f592f4eda6cbc7bd7f9421463c6980"
   integrity sha512-SAdjHgNemTFNxUF/QJ2KdC0x6wWpY1EsMJMo+F5KIHCDRsUUahjAIldoK+ejH00rPgUoCOhAHQ/ob/J7eyZ5qg==
 
-supabase@^2.31.8:
-  version "2.31.8"
-  resolved "https://registry.yarnpkg.com/supabase/-/supabase-2.31.8.tgz#a5058a42eaf5975014ef9b08ef75826f9cf9a4b7"
-  integrity sha512-AsALbB9qKqUhu5A8gZK5VMR2SPo2DPP7W544MBk7JKfLo3Pi8YoAxGxx5skarfeqDtHkzEREU/seFIaYP/bl3A==
+supabase@^2.34.3:
+  version "2.34.3"
+  resolved "https://registry.yarnpkg.com/supabase/-/supabase-2.34.3.tgz#42c8f68d99f578fc16756e3229cf1794036eccc6"
+  integrity sha512-nMO7MFkw3ze/ScRt8S7AssNuBDbFeEsu2MTF2hol5T8HoAz5WgoLhhwCL5NUh8G0Jigpg88QIaDEPhHdNvv9TQ==
   dependencies:
     bin-links "^5.0.0"
     https-proxy-agent "^7.0.2"

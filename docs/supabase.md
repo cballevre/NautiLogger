@@ -29,3 +29,12 @@ yarn generate:seed
 ```
 
 Each time
+
+## Types
+
+You can generate the types from the database with the command :
+```
+yarn types:generate
+```
+
+This script use Supabase CLI to generate the types file from your local database. You just need to go remove the last line inside the file `src/shared/types/supabase.ts` after running the command.
