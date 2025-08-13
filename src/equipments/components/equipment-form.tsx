@@ -80,6 +80,20 @@ const EquipmentForm: FC<EquipmentFormProps> = ({
       >
         <InputNumber style={{ width: '100%' }} min={0} step={0.01} suffix="€" />
       </Form.Item>
+      <Form.Item
+        label={translate('equipments.form.labels.quantity')}
+        name="quantity"
+        rules={[
+          {
+            required: true,
+            type: 'number',
+            min: 1,
+            message: translate('equipments.form.validation.quantity_required'),
+          },
+        ]}
+      >
+        <InputNumber style={{ width: '100%' }} min={1} step={1} />
+      </Form.Item>
     </Form>
   );
 };

@@ -8,6 +8,7 @@ create table public.equipments (
   warranty_end_date timestamp with time zone,
   purchase_value real,
   purchase_date timestamp with time zone,
+  quantity integer not null default 1,
   created_at timestamp with time zone not null default now(),
   boat_id uuid not null,
   system_key text not null,
