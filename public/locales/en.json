@@ -193,11 +193,13 @@
         "serial_number": "Serial Number",
         "warranty_end_date": "Warranty End Date",
         "purchase_value": "Purchase Value",
-        "purchase_date": "Purchase Date"
+        "purchase_date": "Purchase Date",
+        "quantity": "Quantity"
       },
       "validation": {
         "name_required": "Equipment name is required.",
-        "system_required": "System is required."
+        "system_required": "System is required.",
+        "quantity_required": "Quantity is required (minimum 1)."
       }
     }
   },

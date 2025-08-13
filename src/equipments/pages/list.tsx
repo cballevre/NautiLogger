@@ -76,6 +76,9 @@ const EquipmentList = () => {
                       <Link
                         to={`/boats/${boat?.data.id}/equipments/${equipment.id}`}
                       >
+                        {equipment.quantity > 1
+                          ? `${equipment.quantity} x `
+                          : null}
                         {equipment.name}
                       </Link>
                     }

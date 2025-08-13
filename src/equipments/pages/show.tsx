@@ -31,6 +31,9 @@ const ShowEquipment = () => {
       <Card>
         <Typography.Paragraph>
           <strong>{translate('equipments.form.labels.name')}: </strong>
+          {equipment?.data.quantity > 1
+            ? `${equipment?.data.quantity} x `
+            : null}
           {equipment?.data.name}
         </Typography.Paragraph>
         <Typography.Paragraph>
@@ -66,10 +69,23 @@ const ShowEquipment = () => {
             <strong>
               {translate('equipments.form.labels.purchase_value')}:{' '}
             </strong>
-            {equipment.data.purchase_value.toLocaleString(undefined, {
-              style: 'currency',
-              currency: 'EUR',
-            })}
+            {equipment?.data.quantity > 1
+              ? `${equipment.data.quantity} x ${equipment.data.purchase_value.toLocaleString(
+                  undefined,
+                  {
+                    style: 'currency',
+                    currency: 'EUR',
+                  },
+                )} = ${(
+                  equipment.data.quantity * equipment.data.purchase_value
+                ).toLocaleString(undefined, {
+                  style: 'currency',
+                  currency: 'EUR',
+                })}`
+              : equipment.data.purchase_value.toLocaleString(undefined, {
+                  style: 'currency',
+                  currency: 'EUR',
+                })}
           </Typography.Paragraph>
         ) : null}
         {equipment?.data.purchase_date ? (

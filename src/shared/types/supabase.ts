@@ -7,10 +7,30 @@ export type Json =
   | Json[];
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
-  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
-  __InternalSupabase: {
-    PostgrestVersion: '12.2.12 (cd3cf9e)';
+  graphql_public: {
+    Tables: {
+      [_ in never]: never;
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      graphql: {
+        Args: {
+          operationName?: string;
+          query?: string;
+          variables?: Json;
+          extensions?: Json;
+        };
+        Returns: Json;
+      };
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
+    };
   };
   public: {
     Tables: {
@@ -75,6 +95,7 @@ export type Database = {
           file_path: string;
           file_type: string | null;
           id: string;
+          type: string;
           uploaded_at: string;
         };
         Insert: {
@@ -84,6 +105,7 @@ export type Database = {
           file_path: string;
           file_type?: string | null;
           id?: string;
+          type?: string;
           uploaded_at?: string;
         };
         Update: {
@@ -93,11 +115,12 @@ export type Database = {
           file_path?: string;
           file_type?: string | null;
           id?: string;
+          type?: string;
           uploaded_at?: string;
         };
         Relationships: [
           {
-            foreignKeyName: 'attachments_equipment_id_fkey';
+            foreignKeyName: 'equipment_attachments_equipment_id_fkey';
             columns: ['equipment_id'];
             isOneToOne: false;
             referencedRelation: 'equipments';
@@ -116,6 +139,7 @@ export type Database = {
           name: string;
           purchase_date: string | null;
           purchase_value: number | null;
+          quantity: number;
           serial_number: string | null;
           system_key: string;
           warranty_end_date: string | null;
@@ -130,6 +154,7 @@ export type Database = {
           name: string;
           purchase_date?: string | null;
           purchase_value?: number | null;
+          quantity?: number;
           serial_number?: string | null;
           system_key: string;
           warranty_end_date?: string | null;
@@ -144,6 +169,7 @@ export type Database = {
           name?: string;
           purchase_date?: string | null;
           purchase_value?: number | null;
+          quantity?: number;
           serial_number?: string | null;
           system_key?: string;
           warranty_end_date?: string | null;
@@ -158,6 +184,47 @@ export type Database = {
           },
         ];
       };
+      intervention_attachments: {
+        Row: {
+          description: string | null;
+          file_name: string;
+          file_path: string;
+          file_type: string | null;
+          id: string;
+          intervention_id: string;
+          type: string;
+          uploaded_at: string;
+        };
+        Insert: {
+          description?: string | null;
+          file_name: string;
+          file_path: string;
+          file_type?: string | null;
+          id?: string;
+          intervention_id: string;
+          type?: string;
+          uploaded_at?: string;
+        };
+        Update: {
+          description?: string | null;
+          file_name?: string;
+          file_path?: string;
+          file_type?: string | null;
+          id?: string;
+          intervention_id?: string;
+          type?: string;
+          uploaded_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'intervention_attachments_intervention_id_fkey';
+            columns: ['intervention_id'];
+            isOneToOne: false;
+            referencedRelation: 'interventions';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       interventions: {
         Row: {
           boat_id: string;
@@ -165,7 +232,10 @@ export type Database = {
           date: string;
           description: string | null;
           id: string;
+          labor_cost: number | null;
+          supply_cost: number | null;
           title: string;
+          total_cost: number | null;
         };
         Insert: {
           boat_id: string;
@@ -173,7 +243,10 @@ export type Database = {
           date: string;
           description?: string | null;
           id?: string;
+          labor_cost?: number | null;
+          supply_cost?: number | null;
           title: string;
+          total_cost?: number | null;
         };
         Update: {
           boat_id?: string;
@@ -181,7 +254,10 @@ export type Database = {
           date?: string;
           description?: string | null;
           id?: string;
+          labor_cost?: number | null;
+          supply_cost?: number | null;
           title?: string;
+          total_cost?: number | null;
         };
         Relationships: [
           {
@@ -200,6 +276,10 @@ export type Database = {
     Functions: {
       check_equipment_access: {
         Args: { equipment_id: string };
+        Returns: boolean;
+      };
+      check_intervention_access: {
+        Args: { intervention_id: string };
         Returns: boolean;
       };
       has_boat_access: {
@@ -337,6 +417,9 @@ export type CompositeTypes<
     : never;
 
 export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
   public: {
     Enums: {
       access_role: ['owner', 'operator', 'viewer'],
